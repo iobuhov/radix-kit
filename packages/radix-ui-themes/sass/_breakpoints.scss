@@ -1,17 +1,19 @@
+@use 'sass:map';
+
 $breakpoints: (
   'xs': 520px,
   'sm': 768px,
   'md': 1024px,
   'lg': 1280px,
-  'xl': 1640px
+  'xl': 1640px,
 );
 
 @mixin breakpoint($size) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $size) {
+    @media (min-width: map.get($breakpoints, $size)) {
       @content;
     }
   } @else {
-    @warn "Unknown breakpoint: #{$breakpoint}";
+    @warn "Unknown size: #{$size}";
   }
 }

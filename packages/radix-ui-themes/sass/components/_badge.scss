@@ -1,6 +1,4 @@
 @use '../breakpoints' as *;
-@use '../tokens' as tokens;
-
 
 $pfx: '.rt';
 
@@ -91,8 +89,9 @@ $pfx: '.rt';
     color: var(--accent-a11);
 
     &:where(#{$pfx}-high-contrast) {
-      box-shadow: inset 0 0 0 1px var(--accent-a7),
-                 inset 0 0 0 1px var(--gray-a11);
+      box-shadow:
+        inset 0 0 0 1px var(--accent-a7),
+        inset 0 0 0 1px var(--gray-a11);
       color: var(--accent-12);
     }
   }

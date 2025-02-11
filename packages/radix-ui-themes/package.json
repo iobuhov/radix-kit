@@ -66,7 +66,7 @@
     "postcss-whitespace.cjs"
   ],
   "scripts": {
-    "build": "pnpm build:js && pnpm build:css",
+    "build": "pnpm build:js:esm && pnpm build:js:esm:types",
     "build:js": "pnpm build:js:cjs && pnpm build:js:esm && pnpm build:js:cjs:types && pnpm build:js:esm:types",
     "build:js:cjs": "node scripts/esbuild-cjs.js",
     "build:js:cjs:types": "tsc --outdir dist/cjs",
@@ -97,7 +97,8 @@
     "lint:ts": "tsc --noEmit",
     "lint:css": "stylelint \"src/**/*.css\"",
     "clean": "rm -rf .turbo node_modules dist tokens layout *.css",
-    "prepublishOnly": "pnpm lint"
+    "prepublishOnly": "pnpm lint",
+    "update-radix-colors": "zx scripts/update-radix-colors.mjs"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
@@ -140,7 +141,8 @@
     "react-dom": "^19.0.0",
     "stylelint": "16.6.1",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.18.1"
+    "typescript-eslint": "^8.18.1",
+    "zx": "^8.3.2"
   },
   "homepage": "https://radix-ui.com/themes",
   "repository": {

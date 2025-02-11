@@ -1,4 +1,3 @@
-@use 'breakpoints';
 // @use 'tokens';
 // @use 'components';
 // @use 'utilities';
@@ -7,4 +6,5 @@
 // @forward 'tokens';
 // @forward 'components';
 // @forward 'utilities';
+@forward 'tokens/index';
 @forward 'components/badge';
