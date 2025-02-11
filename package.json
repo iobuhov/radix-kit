@@ -10,6 +10,7 @@
     "clean": "turbo run clean && rm -rf node_modules .turbo"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.14",
     "@types/node": "^20.16.10",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
