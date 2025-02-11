@@ -1,0 +1,10 @@
+@use 'breakpoints';
+// @use 'tokens';
+// @use 'components';
+// @use 'utilities';
+
+// Re-export all styles
+// @forward 'tokens';
+// @forward 'components';
+// @forward 'utilities';
+@forward 'components/badge';

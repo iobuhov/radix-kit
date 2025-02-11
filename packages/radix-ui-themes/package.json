@@ -103,7 +103,8 @@
     "@radix-ui/colors": "^3.0.0",
     "classnames": "^2.3.2",
     "radix-ui": "^1.1.2",
-    "react-remove-scroll-bar": "^2.3.8"
+    "react-remove-scroll-bar": "^2.3.8",
+    "sass": "^1.84.0"
   },
   "peerDependencies": {
     "@types/react": "*",
