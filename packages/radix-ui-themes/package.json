@@ -49,6 +49,13 @@
     },
     "./*": "./*"
   },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/esm/*"
+      ]
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
