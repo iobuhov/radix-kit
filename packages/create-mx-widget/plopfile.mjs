@@ -1,3 +1,5 @@
+import { runInstall } from "./run-install.mjs";
+
 export default function (plop) {
   const extendData = (data) => {
     const { name } = data;
@@ -21,6 +23,8 @@ export default function (plop) {
       src: `${root}/${widgetDir}/src`,
     };
   };
+
+  plop.setActionType('install', runInstall)
 
   plop.setGenerator('widget', {
     description: 'Create a new widget',
@@ -127,6 +131,7 @@ export default function (plop) {
         tsConfig,
         widget,
         widgetXML,
+        { type: 'install', data },
       ];
     },
   });
