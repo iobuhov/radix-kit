@@ -37,7 +37,16 @@ interface ThemeContextValue extends ThemeChangeHandlers {
   radius: ThemeRadius;
   scaling: ThemeScaling;
 }
-const ThemeContext = React.createContext<ThemeContextValue | undefined>(undefined);
+const ThemeContextKey = Symbol.for('Radix.ThemeContext');
+
+declare global {
+  interface Window {
+    [ThemeContextKey]?: React.Context<ThemeContextValue | undefined>;
+  }
+}
+
+const ThemeContext: React.Context<ThemeContextValue | undefined> =
+  window[ThemeContextKey] ?? React.createContext<ThemeContextValue | undefined>(undefined);
 
 function useThemeContext() {
   const context = React.useContext(ThemeContext);
@@ -116,7 +125,7 @@ const ThemeRoot = React.forwardRef<ThemeImplElement, ThemeImplPublicProps>(
         onScalingChange={setScaling}
       />
     );
-  }
+  },
 );
 ThemeRoot.displayName = 'ThemeRoot';
 
@@ -190,7 +199,7 @@ const ThemeImpl = React.forwardRef<ThemeImplElement, ThemeImplProps>((props, for
           onPanelBackgroundChange,
           onRadiusChange,
           onScalingChange,
-        ]
+        ],
       )}
     >
       <Comp
@@ -210,7 +219,7 @@ const ThemeImpl = React.forwardRef<ThemeImplElement, ThemeImplProps>((props, for
             light: appearance === 'light',
             dark: appearance === 'dark',
           },
-          themeProps.className
+          themeProps.className,
         )}
       />
     </ThemeContext.Provider>
