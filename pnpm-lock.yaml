@@ -127,7 +127,7 @@ importers:
 
   widgets/badge:
     dependencies:
-      '@radix-ui/themes':
+      '@radix-ui/themes-radix-kit':
         specifier: workspace:^
         version: link:../../packages/radix-ui-themes
       classnames:
