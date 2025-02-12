@@ -1,31 +1,27 @@
 {
-    "name": "badge",
-    "widgetName": "Badge",
+    "name": "{{packageName}}",
+    "widgetName": "{{widgetName}}",
     "version": "0.1.0",
-    "description": "Stylized badge element",
-    "copyright": "© Mendix Technology BV 2022. All rights reserved.",
-    "author": "John",
+    "description": "{{json description}}",
+    "copyright": "© 2025 Illia Obukhau",
+    "author": "Illia Obukhau",
     "engines": {
-        "node": ">=16"
+        "node": ">=22"
     },
     "license": "Apache-2.0",
-    "config": {
-        "projectPath": "./tests/testProject",
-        "mendixHost": "http://localhost:8080",
-        "developmentPort": 3000
-    },
-    "packagePath": "mendix",
+    "packagePath": "{{json packagePath}}",
     "scripts": {
-        "start": "pluggable-widgets-tools start:server",
         "dev": "pluggable-widgets-tools start:web",
         "build": "pluggable-widgets-tools build:web",
         "lint": "pluggable-widgets-tools lint",
-        "lint:fix": "pluggable-widgets-tools lint:fix",
-        "prerelease": "npm run lint",
+        "test": "pluggable-widgets-tools test:unit:web --no-cache --ci",
+        "test:unit": "pluggable-widgets-tools test:unit:web --coverage",
+        "prerelease": "pnpm run lint",
         "release": "pluggable-widgets-tools release:web"
     },
     "devDependencies": {
         "@mendix/pluggable-widgets-tools": "^10.15.0",
+        "@prettier/plugin-xml": "^3.4.1",
         "@types/big.js": "^6.0.2",
         "mendix": "^10.19.57669"
     },

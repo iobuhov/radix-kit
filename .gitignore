@@ -13,3 +13,15 @@ public/dist
 packages/radix-ui-themes/*.css
 packages/radix-ui-themes/tokens
 packages/radix-ui-themes/layout
+*.bak
+*.launch
+mxproject
+coverage
+
+**/results
+mendixProject
+**/e2e/diffs
+**/screenshot
+**/screenshot-results
+**/tests/testProject
+**/artifacts

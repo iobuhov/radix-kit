@@ -17,15 +17,19 @@
     "create-mx-widget": "workspace:^",
     "prettier": "^3.4.2",
     "turbo": "^2.3.3",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "@prettier/plugin-xml": "^3.4.1"
+    
   },
   "pnpm": {
     "overrides": {
+      "prettier": "^3.4.2",
       "@types/react-dom": "^18.2.0",
       "@types/react": "^18.2.0",
       "react": "^18.2.0",
       "string-width": "4.2.3",
-      "@mendix/pluggable-widgets-tools": "^10.15.0"
+      "@mendix/pluggable-widgets-tools": "^10.15.0",
+      "@prettier/plugin-xml": "^3.4.1"
     }
   }
 }

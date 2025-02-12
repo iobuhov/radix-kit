@@ -5,16 +5,21 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  prettier: ^3.4.2
   '@types/react-dom': ^18.2.0
   '@types/react': ^18.2.0
   react: ^18.2.0
   string-width: 4.2.3
   '@mendix/pluggable-widgets-tools': ^10.15.0
+  '@prettier/plugin-xml': ^3.4.1
 
 importers:
 
   .:
     devDependencies:
+      '@prettier/plugin-xml':
+        specifier: ^3.4.1
+        version: 3.4.1(prettier@3.4.2)
       '@types/jest':
         specifier: ^29.5.14
         version: 29.5.14
@@ -151,7 +156,7 @@ importers:
         version: 10.18.0(@jest/transform@29.7.0)(@jest/types@29.6.3)(@types/babel__core@7.20.5)(@types/node@20.17.16)(picomatch@4.0.2)(react-dom@19.0.0(react@19.0.0))(react-native@0.77.0(@babel/core@7.26.8)(@babel/preset-env@7.26.8(@babel/core@7.26.8))(@types/react@18.3.18)(react@19.0.0))(react@19.0.0)(tslib@2.8.1)
       '@prettier/plugin-xml':
         specifier: ^3.4.1
-        version: 3.4.1(prettier@2.8.8)
+        version: 3.4.1(prettier@3.4.2)
       '@types/big.js':
         specifier: ^6.0.2
         version: 6.2.2
@@ -1368,13 +1373,10 @@ packages:
     resolution: {integrity: sha512-dfUnCxiN9H4ap84DvD2ubjw+3vUNpstxa0TneY/Paat8a3R4uQZDLSvWjmznAY/DoahqTHl9V46HF/Zs3F29pg==}
     engines: {node: '>= 10.0.0'}
 
-  '@prettier/plugin-xml@1.2.0':
-    resolution: {integrity: sha512-bFvVAZKs59XNmntYjyefn3K4TBykS6E+d6ZW8IcylAs88ZO+TzLhp0dPpi0VKfPzq1Nb+kpDnPRTiwb4zY6NgA==}
-
   '@prettier/plugin-xml@3.4.1':
     resolution: {integrity: sha512-Uf/6/+9ez6z/IvZErgobZ2G9n1ybxF5BhCd7eMcKqfoWuOzzNUxBipNo3QAP8kRC1VD18TIo84no7LhqtyDcTg==}
     peerDependencies:
-      prettier: ^3.0.0
+      prettier: ^3.4.2
 
   '@radix-ui/colors@3.0.0':
     resolution: {integrity: sha512-FUOsGBkHrYJwCSEtWRCIfQbZG7q1e6DgxCIOe1SUQzDe/7rXXeA47s8yCn6fuTNQAj1Zq4oTFi9Yjp3wzElcxg==}
@@ -3492,7 +3494,7 @@ packages:
     peerDependencies:
       eslint: '>=5.0.0'
       eslint-config-prettier: '*'
-      prettier: '>=1.13.0'
+      prettier: ^3.4.2
     peerDependenciesMeta:
       eslint-config-prettier:
         optional: true
@@ -5632,11 +5634,6 @@ packages:
   prettier-linter-helpers@1.0.0:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
     engines: {node: '>=6.0.0'}
-
-  prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
 
   prettier@3.4.2:
     resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
@@ -8235,7 +8232,7 @@ snapshots:
       '@babel/preset-env': 7.26.8(@babel/core@7.26.8)
       '@babel/preset-react': 7.26.3(@babel/core@7.26.8)
       '@cfaester/enzyme-adapter-react-18': 0.6.0(enzyme@3.11.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@prettier/plugin-xml': 1.2.0
+      '@prettier/plugin-xml': 3.4.1(prettier@3.4.2)
       '@rollup/plugin-alias': 5.1.1(rollup@3.29.5)
       '@rollup/plugin-babel': 6.0.4(@babel/core@7.26.8)(@types/babel__core@7.20.5)(rollup@3.29.5)
       '@rollup/plugin-commonjs': 28.0.2(rollup@3.29.5)
@@ -8268,7 +8265,7 @@ snapshots:
       eslint: 7.32.0
       eslint-config-prettier: 8.10.0(eslint@7.32.0)
       eslint-plugin-jest: 24.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.7.3))(eslint@7.32.0)(typescript@5.7.3))(eslint@7.32.0)(typescript@5.7.3)
-      eslint-plugin-prettier: 3.4.1(eslint-config-prettier@8.10.0(eslint@7.32.0))(eslint@7.32.0)(prettier@2.8.8)
+      eslint-plugin-prettier: 3.4.1(eslint-config-prettier@8.10.0(eslint@7.32.0))(eslint@7.32.0)(prettier@3.4.2)
       eslint-plugin-promise: 4.3.1
       eslint-plugin-react: 7.28.0(eslint@7.32.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@7.32.0)
@@ -8291,7 +8288,7 @@ snapshots:
       postcss: 8.4.33
       postcss-import: 14.1.0(postcss@8.4.33)
       postcss-url: 10.1.3(postcss@8.4.33)
-      prettier: 2.8.8
+      prettier: 3.4.2
       react-test-renderer: 18.2.0(react@19.0.0)
       recursive-copy: 2.0.14
       resolve: 1.22.10
@@ -8403,15 +8400,10 @@ snapshots:
       '@parcel/watcher-win32-x64': 2.5.1
     optional: true
 
-  '@prettier/plugin-xml@1.2.0':
+  '@prettier/plugin-xml@3.4.1(prettier@3.4.2)':
     dependencies:
       '@xml-tools/parser': 1.0.11
       prettier: 3.4.2
-
-  '@prettier/plugin-xml@3.4.1(prettier@2.8.8)':
-    dependencies:
-      '@xml-tools/parser': 1.0.11
-      prettier: 2.8.8
 
   '@radix-ui/colors@3.0.0': {}
 
@@ -11022,10 +11014,10 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-prettier@3.4.1(eslint-config-prettier@8.10.0(eslint@7.32.0))(eslint@7.32.0)(prettier@2.8.8):
+  eslint-plugin-prettier@3.4.1(eslint-config-prettier@8.10.0(eslint@7.32.0))(eslint@7.32.0)(prettier@3.4.2):
     dependencies:
       eslint: 7.32.0
-      prettier: 2.8.8
+      prettier: 3.4.2
       prettier-linter-helpers: 1.0.0
     optionalDependencies:
       eslint-config-prettier: 8.10.0(eslint@7.32.0)
@@ -13614,8 +13606,6 @@ snapshots:
   prettier-linter-helpers@1.0.0:
     dependencies:
       fast-diff: 1.3.0
-
-  prettier@2.8.8: {}
 
   prettier@3.4.2: {}
 
