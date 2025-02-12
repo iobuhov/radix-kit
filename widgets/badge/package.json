@@ -26,7 +26,8 @@
     },
     "devDependencies": {
         "@mendix/pluggable-widgets-tools": "^10.15.0",
-        "@types/big.js": "^6.0.2"
+        "@types/big.js": "^6.0.2",
+        "mendix": "^10.19.57669"
     },
     "dependencies": {
         "@radix-ui/themes-radix-kit": "workspace:^",
