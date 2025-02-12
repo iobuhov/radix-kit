@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import pkg from '../package.json' with { type: 'json' };
 
-const dir = 'dist/esm';
+const dir = 'dist';
 
 /** @type {import('esbuild').BuildOptions} */
 const options = {
@@ -13,6 +13,7 @@ const options = {
   target: 'es2020',
   sourcemap: true,
   minify: true,
+  logLevel: 'info',
 };
 
 // Check if "watch=true" flag is passed
