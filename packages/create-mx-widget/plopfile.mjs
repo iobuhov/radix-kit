@@ -1,7 +1,4 @@
 export default function (plop) {
-  // Create a generator for the widget
-  plop.setHelper('json', (obj) => JSON.stringify(obj));
-
   const extendData = (data) => {
     const { name } = data;
     const root = 'widgets';
@@ -42,43 +39,95 @@ export default function (plop) {
     actions: function (data) {
       data = extendData(data);
 
-      const widget = {
+      const editorConfig = {
         type: 'add',
         data,
-        path: '{{src}}/{{widgetName}}.tsx',
-        templateFile: 'src/templates/widget.hbs',
+        path: '{{src}}/{{widgetName}}.editorConfig.ts',
+        templateFile: 'src/templates/editor-config.hbs',
       };
-      const widgetXML = {
+
+      const editorPreview = {
         type: 'add',
         data,
-        path: '{{src}}/{{widgetName}}.xml',
-        templateFile: 'src/templates/widget.xml.hbs',
+        path: '{{src}}/{{widgetName}}.editorPreview.tsx',
+        templateFile: 'src/templates/editor-preview.hbs',
       };
-      const packageXML = {
-        type: 'add',
-        data,
-        path: '{{src}}/package.xml',
-        templateFile: 'src/templates/package.xml.hbs',
-      };
-      const packageJson = {
-        type: 'add',
-        data,
-        path: '{{src}}/package.json',
-        templateFile: 'src/templates/package.json.hbs',
-      };
+
       const editorTypes = {
         type: 'add',
         data,
         path: '{{baseDir}}/typings/editor-types.d.ts',
         templateFile: 'src/templates/editor-types.hbs',
       };
-      const editorConfig = {
+
+      const eslintrc = {
         type: 'add',
         data,
-        path: '{{src}}/{{widgetName}}.editorConfig.ts',
+        path: '{{baseDir}}/.eslintrc.js',
+        templateFile: 'src/templates/eslintrc.hbs',
+      }
+
+      const packageJson = {
+        type: 'add',
+        data,
+        path: '{{baseDir}}/package.json',
+        templateFile: 'src/templates/package.json.hbs',
       };
 
-      return [widget, widgetXML, packageXML, packageJson, editorTypes, editorConfig];
+      const packageXML = {
+        type: 'add',
+        data,
+        path: '{{src}}/package.xml',
+        templateFile: 'src/templates/package.xml.hbs',
+      };
+
+      const prettierConfig = {
+        type: 'add',
+        data,
+        path: '{{baseDir}}/prettier.config.js',
+        templateFile: 'src/templates/prettier.config.hbs',
+      }
+      
+      const prettierIgnore = {
+        type: 'add',
+        data,
+        path: '{{baseDir}}/.prettierignore',
+        template: 'tests/testProject/\n'
+      }
+
+      const tsConfig = {
+        type: 'add',
+        data,
+        path: '{{baseDir}}/tsconfig.json',
+        templateFile: 'src/templates/tsconfig.json.hbs',
+      }
+      const widget = {
+        type: 'add',
+        data,
+        path: '{{src}}/{{widgetName}}.tsx',
+        templateFile: 'src/templates/widget.hbs',
+      };
+
+      const widgetXML = {
+        type: 'add',
+        data,
+        path: '{{src}}/{{widgetName}}.xml',
+        templateFile: 'src/templates/widget.xml.hbs',
+      };
+
+      return [
+        editorConfig,
+        editorPreview,
+        editorTypes,
+        eslintrc,
+        packageJson,
+        packageXML,
+        prettierConfig,
+        prettierIgnore,
+        tsConfig,
+        widget,
+        widgetXML,
+      ];
     },
   });
 }
