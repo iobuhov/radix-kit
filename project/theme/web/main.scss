@@ -1,0 +1,11 @@
+@import "custom-variables";
+
+.std-app-icon {
+    min-width: 16px;
+    width: fit-content;
+    min-height: 16px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
