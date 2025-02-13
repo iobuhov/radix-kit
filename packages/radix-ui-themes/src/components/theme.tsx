@@ -45,8 +45,8 @@ declare global {
   }
 }
 
-const ThemeContext: React.Context<ThemeContextValue | undefined> =
-  window[ThemeContextKey] ?? React.createContext<ThemeContextValue | undefined>(undefined);
+const ThemeContext: React.Context<ThemeContextValue | undefined> = (window[ThemeContextKey] ??=
+  React.createContext<ThemeContextValue | undefined>(undefined));
 
 function useThemeContext() {
   const context = React.useContext(ThemeContext);

@@ -1,15 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<widget id="com.radixkit.widget.themeprovider.ThemeProvider" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
-        supportedPlatform="Web"
-        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="com.radixkit.widget.themeprovider.ThemeProvider"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
     <name>ThemeProvider</name>
     <description>Radix theme provider for app</description>
     <icon />
     <properties>
         <propertyGroup caption="General">
-            <property key="text" type="string" required="false">
-                <caption>Text</caption>
+            <property key="radius" type="enumeration" defaultValue="medium">
+                <caption>Can hide</caption>
+                <description>Theme radius setting manages the radius factor applied to the components</description>
+                <enumerationValues>
+                    <enumerationValue key="none">none</enumerationValue>
+                    <enumerationValue key="small">small</enumerationValue>
+                    <enumerationValue key="medium">medium</enumerationValue>
+                    <enumerationValue key="large">large</enumerationValue>
+                    <enumerationValue key="full">full</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="content" type="widgets" required="false">
+                <caption>Content</caption>
                 <description />
             </property>
         </propertyGroup>
