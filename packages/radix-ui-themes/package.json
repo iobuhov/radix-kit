@@ -64,7 +64,8 @@
     "lint:js": "eslint \"src/**/*.ts*\"",
     "lint:ts": "tsc --noEmit",
     "clean": "rm -rf .turbo node_modules dist tokens layout *.css",
-    "update-radix-colors": "zx scripts/update-radix-colors.mjs"
+    "update-radix-colors": "zx scripts/update-radix-colors.mjs",
+    "dev:sass": "zx scripts/copy-sass.mjs"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
@@ -90,6 +91,9 @@
   "devDependencies": {
     "@eslint/js": "^9.18.0",
     "autoprefixer": "10.4.19",
+    "concurrently": "^9.1.2",
+    "copy-and-watch": "^0.1.8",
+    "dotenv": "^16.4.7",
     "esbuild": "0.20.0",
     "eslint": "^9.18.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",

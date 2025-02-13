@@ -21,6 +21,10 @@
       "cache": false,
       "persistent": true
     },
+    "dev:sass": {
+      "cache": false,
+      "persistent": true
+    },
     "clean": {
       "cache": false
     }

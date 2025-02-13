@@ -4,7 +4,7 @@
   "packageManager": "pnpm@10.0.0",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev dev:ts --no-cache --continue",
+    "dev": "turbo run dev dev:ts dev:sass --no-cache --continue",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules .turbo",
     "create:widget": "pnpm run plop --filter=plop-widget-cli",
