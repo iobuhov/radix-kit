@@ -1,0 +1,34 @@
+@use '../breakpoints' as *;
+
+.rt-r-fd-row {
+  flex-direction: row;
+}
+
+.rt-r-fd-column {
+  flex-direction: column;
+}
+
+.rt-r-fd-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.rt-r-fd-column-reverse {
+  flex-direction: column-reverse;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-fd-row {
+      flex-direction: row;
+    }
+    .#{$bp}\:rt-r-fd-column {
+      flex-direction: column;
+    }
+    .#{$bp}\:rt-r-fd-row-reverse {
+      flex-direction: row-reverse;
+    }
+    .#{$bp}\:rt-r-fd-column-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@use '../_breakpoints' as *;
+
+.rt-r-as-start {
+  align-self: flex-start;
+}
+
+.rt-r-as-center {
+  align-self: center;
+}
+
+.rt-r-as-end {
+  align-self: flex-end;
+}
+
+.rt-r-as-baseline {
+  align-self: baseline;
+}
+
+.rt-r-as-stretch {
+  align-self: stretch;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-as-start {
+      align-self: flex-start;
+    }
+    .#{$bp}\:rt-r-as-center {
+      align-self: center;
+    }
+    .#{$bp}\:rt-r-as-end {
+      align-self: flex-end;
+    }
+    .#{$bp}\:rt-r-as-baseline {
+      align-self: baseline;
+    }
+    .#{$bp}\:rt-r-as-stretch {
+      align-self: stretch;
+    }
+  }
+}
