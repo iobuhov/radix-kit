@@ -1,0 +1,25 @@
+@use '../breakpoints' as *;
+
+.rt-r-fw-nowrap {
+  flex-wrap: nowrap;
+}
+.rt-r-fw-wrap {
+  flex-wrap: wrap;
+}
+.rt-r-fw-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-fw-nowrap {
+      flex-wrap: nowrap;
+    }
+    .#{$bp}\:rt-r-fw-wrap {
+      flex-wrap: wrap;
+    }
+    .#{$bp}\:rt-r-fw-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+  }
+}

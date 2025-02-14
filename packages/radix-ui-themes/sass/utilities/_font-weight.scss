@@ -1,0 +1,31 @@
+@use '../breakpoints' as *;
+
+.rt-r-weight-light {
+  font-weight: var(--font-weight-light);
+}
+.rt-r-weight-regular {
+  font-weight: var(--font-weight-regular);
+}
+.rt-r-weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+.rt-r-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-weight-light {
+      font-weight: var(--font-weight-light);
+    }
+    .#{$bp}\:rt-r-weight-regular {
+      font-weight: var(--font-weight-regular);
+    }
+    .#{$bp}\:rt-r-weight-medium {
+      font-weight: var(--font-weight-medium);
+    }
+    .#{$bp}\:rt-r-weight-bold {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
