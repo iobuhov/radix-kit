@@ -5,7 +5,7 @@ import { Theme } from "./component";
 export function preview(props: ThemeProviderPreviewProps): ReactElement {
     const Placeholder = props.content.renderer;
     return (
-        <Theme radius={props.radius}>
+        <Theme radius={props.radius} appearance={props.appearance}>
             <Placeholder caption={"Content"}>
                 <div />
             </Placeholder>

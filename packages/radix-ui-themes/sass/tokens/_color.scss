@@ -52,17 +52,13 @@
  * Make sure that forced light/dark appearance also sets corresponding browser colors,
  * like input autofill color and body scrollbar
  */
-.radix-themes:where(.light, .light-theme) {
-  &,
-  :root:where(:has(&[data-is-root-theme='true'])) {
-    color-scheme: light;
-  }
+
+:root:where(:has([data-is-root-theme].dark)) {
+  color-scheme: dark;
 }
-.radix-themes:where(.dark, .dark-theme) {
-  &,
-  :root:where(:has(&[data-is-root-theme='true'])) {
-    color-scheme: dark;
-  }
+
+:root:where(:has([data-is-root-theme].light)) {
+  color-scheme: light;
 }
 
 /* * * * * * * * * * * * * * * * * * * */

@@ -14,8 +14,20 @@
     <icon />
     <properties>
         <propertyGroup caption="General">
+            <property key="appearance" type="enumeration" defaultValue="auto">
+                <caption>Appearance</caption>
+                <description>
+                    Sets the color scheme of the theme, typically referred to as light and dark mode.
+                </description>
+                <enumerationValues>
+                    <enumerationValue key="auto">auto</enumerationValue>
+                    <enumerationValue key="dark">dark</enumerationValue>
+                    <enumerationValue key="light">light</enumerationValue>
+                    <enumerationValue key="inherit">inherit</enumerationValue>
+                </enumerationValues>
+            </property>
             <property key="radius" type="enumeration" defaultValue="medium">
-                <caption>Can hide</caption>
+                <caption>Radius</caption>
                 <description>Theme radius setting manages the radius factor applied to the components</description>
                 <enumerationValues>
                     <enumerationValue key="none">none</enumerationValue>
