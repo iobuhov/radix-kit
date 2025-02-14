@@ -1,8 +1,5 @@
 @use '../breakpoints' as *;
 
-.rt-r-fg {
-  /* Keep this selector here to maintain the source order */
-}
 .rt-r-fg-0 {
   flex-grow: 0;
 }
@@ -12,9 +9,6 @@
 
 @each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
   @include breakpoint($bp) {
-    .#{$bp}\:rt-r-fg {
-      /* Keep this selector here to maintain the source order */
-    }
     .#{$bp}\:rt-r-fg-0 {
       flex-grow: 0;
     }

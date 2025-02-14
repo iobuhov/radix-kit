@@ -1,8 +1,5 @@
 @use '../breakpoints' as *;
 
-.rt-r-fs {
-  /* Keep this selector here to maintain the source order */
-}
 .rt-r-fs-0 {
   flex-shrink: 0;
 }
@@ -12,9 +9,6 @@
 
 @each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
   @include breakpoint($bp) {
-    .#{$bp}\:rt-r-fs {
-      /* Keep this selector here to maintain the source order */
-    }
     .#{$bp}\:rt-r-fs-0 {
       flex-shrink: 0;
     }
@@ -27,27 +21,27 @@
 .rt-r-fs {
   flex-shrink: var(--flex-shrink);
 }
-@media (--xs) {
+@include breakpoint(xs) {
   .xs\:rt-r-fs {
     flex-shrink: var(--flex-shrink-xs);
   }
 }
-@media (--sm) {
+@include breakpoint(sm) {
   .sm\:rt-r-fs {
     flex-shrink: var(--flex-shrink-sm);
   }
 }
-@media (--md) {
+@include breakpoint(md) {
   .md\:rt-r-fs {
     flex-shrink: var(--flex-shrink-md);
   }
 }
-@media (--lg) {
+@include breakpoint(lg) {
   .lg\:rt-r-fs {
     flex-shrink: var(--flex-shrink-lg);
   }
 }
-@media (--xl) {
+@include breakpoint(xl) {
   .xl\:rt-r-fs {
     flex-shrink: var(--flex-shrink-xl);
   }
