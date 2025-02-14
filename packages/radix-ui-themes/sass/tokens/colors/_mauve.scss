@@ -1,0 +1,33 @@
+@forward '../../deps/@radix-ui/colors/mauve.css';
+@forward '../../deps/@radix-ui/colors/mauve-dark.css';
+@forward '../../deps/@radix-ui/colors/mauve-alpha.css';
+@forward '../../deps/@radix-ui/colors/mauve-dark-alpha.css';
+
+:root {
+  --mauve-contrast: white;
+}
+
+:root,
+.light,
+.light-theme {
+  --mauve-surface: #ffffffcc;
+  --mauve-indicator: var(--mauve-9);
+  --mauve-track: var(--mauve-9);
+  @supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+      --mauve-surface: color(display-p3 1 1 1 / 0.8);
+    }
+  }
+}
+
+.dark,
+.dark-theme {
+  --mauve-surface: #21212180;
+  --mauve-indicator: var(--mauve-9);
+  --mauve-track: var(--mauve-9);
+  @supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+      --mauve-surface: color(display-p3 0.1255 0.1255 0.1255 / 0.5);
+    }
+  }
+}
