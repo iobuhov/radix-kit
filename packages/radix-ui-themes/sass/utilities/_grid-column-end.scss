@@ -1,33 +1,68 @@
-@breakpoints {
-  .rt-r-gce {
-    /* Keep this selector here to maintain the source order */
-  }
-  .rt-r-gce-1 {
-    grid-column-end: 1;
-  }
-  .rt-r-gce-2 {
-    grid-column-end: 2;
-  }
-  .rt-r-gce-3 {
-    grid-column-end: 3;
-  }
-  .rt-r-gce-4 {
-    grid-column-end: 4;
-  }
-  .rt-r-gce-5 {
-    grid-column-end: 5;
-  }
-  .rt-r-gce-6 {
-    grid-column-end: 6;
-  }
-  .rt-r-gce-7 {
-    grid-column-end: 7;
-  }
-  .rt-r-gce-8 {
-    grid-column-end: 8;
-  }
-  .rt-r-gce-9 {
-    grid-column-end: 9;
+@use '../breakpoints' as *;
+
+.rt-r-gce {
+  /* Keep this selector here to maintain the source order */
+}
+.rt-r-gce-1 {
+  grid-column-end: 1;
+}
+.rt-r-gce-2 {
+  grid-column-end: 2;
+}
+.rt-r-gce-3 {
+  grid-column-end: 3;
+}
+.rt-r-gce-4 {
+  grid-column-end: 4;
+}
+.rt-r-gce-5 {
+  grid-column-end: 5;
+}
+.rt-r-gce-6 {
+  grid-column-end: 6;
+}
+.rt-r-gce-7 {
+  grid-column-end: 7;
+}
+.rt-r-gce-8 {
+  grid-column-end: 8;
+}
+.rt-r-gce-9 {
+  grid-column-end: 9;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-gce {
+      /* Keep this selector here to maintain the source order */
+    }
+    .#{$bp}\:rt-r-gce-1 {
+      grid-column-end: 1;
+    }
+    .#{$bp}\:rt-r-gce-2 {
+      grid-column-end: 2;
+    }
+    .#{$bp}\:rt-r-gce-3 {
+      grid-column-end: 3;
+    }
+    .#{$bp}\:rt-r-gce-4 {
+      grid-column-end: 4;
+    }
+    .#{$bp}\:rt-r-gce-5 {
+      grid-column-end: 5;
+    }
+    .#{$bp}\:rt-r-gce-6 {
+      grid-column-end: 6;
+    }
+    .#{$bp}\:rt-r-gce-7 {
+      grid-column-end: 7;
+    }
+    .#{$bp}\:rt-r-gce-8 {
+      grid-column-end: 8;
+    }
+    .#{$bp}\:rt-r-gce-9 {
+      grid-column-end: 9;
+    }
   }
 }
 
