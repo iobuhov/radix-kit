@@ -27,27 +27,27 @@
 .rt-r-fg {
   flex-grow: var(--flex-grow);
 }
-@media (--xs) {
+@include breakpoint('xs') {
   .xs\:rt-r-fg {
     flex-grow: var(--flex-grow-xs);
   }
 }
-@media (--sm) {
+@include breakpoint('sm') {
   .sm\:rt-r-fg {
     flex-grow: var(--flex-grow-sm);
   }
 }
-@media (--md) {
+@include breakpoint('md') {
   .md\:rt-r-fg {
     flex-grow: var(--flex-grow-md);
   }
 }
-@media (--lg) {
+@include breakpoint('lg') {
   .lg\:rt-r-fg {
     flex-grow: var(--flex-grow-lg);
   }
 }
-@media (--xl) {
+@include breakpoint('xl') {
   .xl\:rt-r-fg {
     flex-grow: var(--flex-grow-xl);
   }

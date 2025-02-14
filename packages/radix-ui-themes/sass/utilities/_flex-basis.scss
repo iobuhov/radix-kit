@@ -1,27 +1,30 @@
+@use '../breakpoints' as *;
+
 .rt-r-fb {
   flex-basis: var(--flex-basis);
 }
-@media (--xs) {
+
+@include breakpoint('xs') {
   .xs\:rt-r-fb {
     flex-basis: var(--flex-basis-xs);
   }
 }
-@media (--sm) {
+@include breakpoint('sm') {
   .sm\:rt-r-fb {
     flex-basis: var(--flex-basis-sm);
   }
 }
-@media (--md) {
+@include breakpoint('md') {
   .md\:rt-r-fb {
     flex-basis: var(--flex-basis-md);
   }
 }
-@media (--lg) {
+@include breakpoint('lg') {
   .lg\:rt-r-fb {
     flex-basis: var(--flex-basis-lg);
   }
 }
-@media (--xl) {
+@include breakpoint('xl') {
   .xl\:rt-r-fb {
     flex-basis: var(--flex-basis-xl);
   }
