@@ -16,7 +16,7 @@
   align-items: stretch;
 }
 
-@each $breakpoint in ('xs', 'sm', 'md', 'lg', 'xl') {
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
   @include breakpoint($bp) {
     .#{$bp}\:rt-r-ai-start {
       align-items: flex-start;
