@@ -43,4 +43,4 @@
   }
 }
 
-@include with-prefixes(meta.get-mixin('container-sizes'));
+@include with-responsive-prefix(meta.get-mixin('container-sizes'));

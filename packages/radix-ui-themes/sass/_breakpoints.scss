@@ -19,7 +19,7 @@ $breakpoints: (
   }
 }
 
-@mixin with-prefixes($mixin) {
+@mixin with-responsive-prefix($mixin) {
   @include meta.apply($mixin, '.rt');
 
   @each $size in (xs, sm, md, lg, xl) {

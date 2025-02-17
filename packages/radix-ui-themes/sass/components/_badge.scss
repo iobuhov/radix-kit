@@ -95,4 +95,4 @@
   }
 }
 
-@include with-prefixes(meta.get-mixin('badge-sizes'));
+@include with-responsive-prefix(meta.get-mixin('badge-sizes'));
