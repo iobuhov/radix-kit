@@ -17,3 +17,13 @@ $breakpoints: (
     @warn "Unknown size: #{$size}";
   }
 }
+
+@mixin breakpoints() {
+  @content;
+
+  @each $size in (xs, sm, md, lg, xl) {
+    @include breakpoint($size) {
+      @content;
+    }
+  }
+}
