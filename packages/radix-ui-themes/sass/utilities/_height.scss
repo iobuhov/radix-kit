@@ -1,28 +1,12 @@
+@use '../breakpoints' as *;
+
 .rt-r-h {
   height: var(--height);
 }
-@media (--xs) {
-  .xs\:rt-r-h {
-    height: var(--height-xs);
-  }
-}
-@media (--sm) {
-  .sm\:rt-r-h {
-    height: var(--height-sm);
-  }
-}
-@media (--md) {
-  .md\:rt-r-h {
-    height: var(--height-md);
-  }
-}
-@media (--lg) {
-  .lg\:rt-r-h {
-    height: var(--height-lg);
-  }
-}
-@media (--xl) {
-  .xl\:rt-r-h {
-    height: var(--height-xl);
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-h {
+      height: var(--height-#{$bp});
+    }
   }
 }
