@@ -1,0 +1,19 @@
+@use '../breakpoints' as *;
+
+.rt-r-tl-auto {
+  table-layout: auto;
+}
+.rt-r-tl-fixed {
+  table-layout: fixed;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-tl-auto {
+      table-layout: auto;
+    }
+    .#{$bp}\:rt-r-tl-fixed {
+      table-layout: fixed;
+    }
+  }
+}

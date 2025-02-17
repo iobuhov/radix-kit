@@ -1,0 +1,29 @@
+@use '../breakpoints' as *;
+
+.rt-r-ta-left {
+  text-align: left;
+}
+
+.rt-r-ta-center {
+  text-align: center;
+}
+
+.rt-r-ta-right {
+  text-align: right;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-ta-left {
+      text-align: left;
+    }
+
+    .#{$bp}\:rt-r-ta-center {
+      text-align: center;
+    }
+
+    .#{$bp}\:rt-r-ta-right {
+      text-align: right;
+    }
+  }
+}

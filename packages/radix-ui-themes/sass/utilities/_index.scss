@@ -1,10 +1,10 @@
 @forward 'layout';
 
 @forward 'font-weight';
-// @import './leading-trim.css';
-// @import './resize.css';
-// @import './table-layout.css';
-// @import './text-align.css';
-// @import './text-wrap.css';
-// @import './truncate.css';
-// @import './vertical-align.css';
+@forward 'leading-trim';
+@forward 'resize';
+@forward 'table-layout';
+@forward 'text-align';
+@forward 'text-wrap';
+@forward 'truncate';
+@forward 'vertical-align';

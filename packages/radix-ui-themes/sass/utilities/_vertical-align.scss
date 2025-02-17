@@ -1,0 +1,37 @@
+@use '../breakpoints' as *;
+
+.rt-r-va-baseline {
+  vertical-align: baseline;
+}
+
+.rt-r-va-top {
+  vertical-align: top;
+}
+
+.rt-r-va-middle {
+  vertical-align: middle;
+}
+
+.rt-r-va-bottom {
+  vertical-align: bottom;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-va-baseline {
+      vertical-align: baseline;
+    }
+
+    .#{$bp}\:rt-r-va-top {
+      vertical-align: top;
+    }
+
+    .#{$bp}\:rt-r-va-middle {
+      vertical-align: middle;
+    }
+
+    .#{$bp}\:rt-r-va-bottom {
+      vertical-align: bottom;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use '../breakpoints' as *;
+
+.rt-r-resize-none {
+  resize: none;
+}
+.rt-r-resize-vertical {
+  resize: vertical;
+}
+.rt-r-resize-horizontal {
+  resize: horizontal;
+}
+.rt-r-resize-both {
+  resize: both;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-resize-none {
+      resize: none;
+    }
+    .#{$bp}\:rt-r-resize-vertical {
+      resize: vertical;
+    }
+    .#{$bp}\:rt-r-resize-horizontal {
+      resize: horizontal;
+    }
+    .#{$bp}\:rt-r-resize-both {
+      resize: both;
+    }
+  }
+}
