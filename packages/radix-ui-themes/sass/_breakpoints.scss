@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:meta';
 
 $breakpoints: (
   'xs': 520px,
@@ -18,12 +19,12 @@ $breakpoints: (
   }
 }
 
-@mixin breakpoints() {
-  @content;
+@mixin with-prefixes($mixin) {
+  @include meta.apply($mixin, '.rt');
 
   @each $size in (xs, sm, md, lg, xl) {
     @include breakpoint($size) {
-      @content;
+      @include meta.apply($mixin, '.#{$size}\\:rt');
     }
   }
 }

@@ -1,4 +1,5 @@
 @use '../breakpoints' as *;
+@use 'sass:meta';
 
 .radix-themes {
   --container-1: 448px;
@@ -25,35 +26,21 @@
  * SIZES                                                                                           *
  *                                                                                                 *
 /***************************************************************************************************/
-.rt-ContainerInner {
-  :where(.rt-Container.rt-r-size-1) & {
-    max-width: var(--container-1);
-  }
-  :where(.rt-Container.rt-r-size-2) & {
-    max-width: var(--container-2);
-  }
-  :where(.rt-Container.rt-r-size-3) & {
-    max-width: var(--container-3);
-  }
-  :where(.rt-Container.rt-r-size-4) & {
-    max-width: var(--container-4);
-  }
-}
-@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
-  @include breakpoint($bp) {
-    .rt-ContainerInner {
-      :where(.rt-Container.rt-r-size-1) & {
-        max-width: var(--container-1);
-      }
-      :where(.rt-Container.rt-r-size-2) & {
-        max-width: var(--container-2);
-      }
-      :where(.rt-Container.rt-r-size-3) & {
-        max-width: var(--container-3);
-      }
-      :where(.rt-Container.rt-r-size-4) & {
-        max-width: var(--container-4);
-      }
+@mixin container-sizes($prefix) {
+  .rt-ContainerInner {
+    :where(.rt-Container#{$prefix}-r-size-1) & {
+      max-width: var(--container-1);
+    }
+    :where(.rt-Container#{$prefix}-r-size-2) & {
+      max-width: var(--container-2);
+    }
+    :where(.rt-Container#{$prefix}-r-size-3) & {
+      max-width: var(--container-3);
+    }
+    :where(.rt-Container#{$prefix}-r-size-4) & {
+      max-width: var(--container-4);
     }
   }
 }
+
+@include with-prefixes(meta.get-mixin('container-sizes'));
