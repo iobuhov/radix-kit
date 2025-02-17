@@ -3,14 +3,14 @@
 @forward 'layout';
 
 /* Import Skeleton before other components so that its default border-radius doesn’t have a higher specificity */
-@import './skeleton.css';
+// @import './skeleton.css';
 
 /* Import Text before other components as it’s commonly extended */
-@import './text.css';
+// @import './text.css';
 
-@import './alert-dialog.css';
-@import './avatar.css';
-@import './badge.css';
+// @import './alert-dialog.css';
+// @import './avatar.css';
+@forward 'badge';
 @import './blockquote.css';
 @import './button.css';
 @import './callout.css';
