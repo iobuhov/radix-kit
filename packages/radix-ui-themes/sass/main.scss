@@ -1,9 +1,7 @@
-// @forward 'components';
-// @forward 'utilities';
+@forward 'components/badge';
 
 @forward 'global';
 @forward 'tokens/index';
-@forward 'components/badge';
 @forward 'utilities/index';
 
 .radix-themes:where([data-is-root-theme='true']) {
