@@ -1,21 +1,45 @@
-@breakpoints {
-  .rt-r-position-static {
-    position: static;
-  }
+@use '../breakpoints' as *;
 
-  .rt-r-position-absolute {
-    position: absolute;
-  }
+.rt-r-position-static {
+  position: static;
+}
 
-  .rt-r-position-relative {
-    position: relative;
-  }
+.rt-r-position-absolute {
+  position: absolute;
+}
 
-  .rt-r-position-fixed {
-    position: fixed;
-  }
+.rt-r-position-relative {
+  position: relative;
+}
 
-  .rt-r-position-sticky {
-    position: sticky;
+.rt-r-position-fixed {
+  position: fixed;
+}
+
+.rt-r-position-sticky {
+  position: sticky;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-position-static {
+      position: static;
+    }
+
+    .#{$bp}\:rt-r-position-absolute {
+      position: absolute;
+    }
+
+    .#{$bp}\:rt-r-position-relative {
+      position: relative;
+    }
+
+    .#{$bp}\:rt-r-position-fixed {
+      position: fixed;
+    }
+
+    .#{$bp}\:rt-r-position-sticky {
+      position: sticky;
+    }
   }
 }
