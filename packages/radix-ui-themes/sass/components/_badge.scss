@@ -1,5 +1,4 @@
 @use '../breakpoints' as *;
-@use 'sass:meta';
 
 .rt-Badge {
   // Base styles
@@ -95,4 +94,10 @@
   }
 }
 
-@include with-responsive-prefix(meta.get-mixin('badge-sizes'));
+@include badge-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include badge-sizes('.#{$size}\\:rt');
+  }
+}

@@ -1,5 +1,4 @@
 @use '../breakpoints' as *;
-@use 'sass:meta';
 
 .radix-themes {
   --container-1: 448px;
@@ -43,4 +42,10 @@
   }
 }
 
-@include with-responsive-prefix(meta.get-mixin('container-sizes'));
+@include container-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include container-sizes('.#{$size}\\:rt');
+  }
+}

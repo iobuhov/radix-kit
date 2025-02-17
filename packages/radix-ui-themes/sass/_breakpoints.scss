@@ -1,5 +1,4 @@
 @use 'sass:map';
-@use 'sass:meta';
 
 $breakpoints: (
   'xs': 520px,
@@ -16,15 +15,5 @@ $breakpoints: (
     }
   } @else {
     @warn "Unknown size: #{$size}";
-  }
-}
-
-@mixin with-responsive-prefix($mixin) {
-  @include meta.apply($mixin, '.rt');
-
-  @each $size in (xs, sm, md, lg, xl) {
-    @include breakpoint($size) {
-      @include meta.apply($mixin, '.#{$size}\\:rt');
-    }
   }
 }
