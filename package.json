@@ -4,7 +4,7 @@
   "packageManager": "pnpm@10.0.0",
   "scripts": {
     "build": "turbo run build",
-    "dev": "cross-env TURBO_FORCE=true turbo watch build dev:ts dev:sass  --continue",
+    "dev": "cross-env TURBO_FORCE=true turbo watch build dev:sass --continue",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules .turbo",
     "create:widget": "pnpm run plop --filter=plop-widget-cli",
