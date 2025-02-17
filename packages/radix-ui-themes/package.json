@@ -56,7 +56,7 @@
   "scripts": {
     "build": "pnpm build:js && pnpm build:ts",
     "build:js": "node scripts/esbuild-esm.js",
-    "build:ts": "tsc",
+    "build:ts": "tsc --build --verbose",
     "dev": "pnpm dev:js",
     "dev:js": "node scripts/esbuild-esm.js watch=true",
     "dev:ts": "tsc --watch --incremental --preserveWatchOutput",
