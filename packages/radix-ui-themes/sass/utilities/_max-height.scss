@@ -4,7 +4,7 @@
   max-height: var(--max-height);
 }
 @each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
-  @include breakpoints($bp) {
+  @include breakpoint($bp) {
     .#{$bp}\:rt-r-max-h {
       max-height: var(--max-height-#{$bp});
     }

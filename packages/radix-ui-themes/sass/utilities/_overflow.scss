@@ -1,0 +1,101 @@
+@use '../breakpoints' as *;
+
+.rt-r-overflow-visible {
+  overflow: visible;
+}
+.rt-r-overflow-hidden {
+  overflow: hidden;
+}
+.rt-r-overflow-clip {
+  overflow: clip;
+}
+.rt-r-overflow-scroll {
+  overflow: scroll;
+}
+.rt-r-overflow-auto {
+  overflow: auto;
+}
+
+.rt-r-ox-visible {
+  overflow-x: visible;
+}
+.rt-r-ox-hidden {
+  overflow-x: hidden;
+}
+.rt-r-ox-clip {
+  overflow-x: clip;
+}
+.rt-r-ox-scroll {
+  overflow-x: scroll;
+}
+.rt-r-ox-auto {
+  overflow-x: auto;
+}
+
+.rt-r-oy-visible {
+  overflow-y: visible;
+}
+.rt-r-oy-hidden {
+  overflow-y: hidden;
+}
+.rt-r-oy-clip {
+  overflow-y: clip;
+}
+.rt-r-oy-scroll {
+  overflow-y: scroll;
+}
+.rt-r-oy-auto {
+  overflow-y: auto;
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-overflow-visible {
+      overflow: visible;
+    }
+    .#{$bp}\:rt-r-overflow-hidden {
+      overflow: hidden;
+    }
+    .#{$bp}\:rt-r-overflow-clip {
+      overflow: clip;
+    }
+    .#{$bp}\:rt-r-overflow-scroll {
+      overflow: scroll;
+    }
+    .#{$bp}\:rt-r-overflow-auto {
+      overflow: auto;
+    }
+
+    .#{$bp}\:rt-r-ox-visible {
+      overflow-x: visible;
+    }
+    .#{$bp}\:rt-r-ox-hidden {
+      overflow-x: hidden;
+    }
+    .#{$bp}\:rt-r-ox-clip {
+      overflow-x: clip;
+    }
+    .#{$bp}\:rt-r-ox-scroll {
+      overflow-x: scroll;
+    }
+    .#{$bp}\:rt-r-ox-auto {
+      overflow-x: auto;
+    }
+
+    .#{$bp}\:rt-r-oy-visible {
+      overflow-y: visible;
+    }
+    .#{$bp}\:rt-r-oy-hidden {
+      overflow-y: hidden;
+    }
+    .#{$bp}\:rt-r-oy-clip {
+      overflow-y: clip;
+    }
+    .#{$bp}\:rt-r-oy-scroll {
+      overflow-y: scroll;
+    }
+    .#{$bp}\:rt-r-oy-auto {
+      overflow-y: auto;
+    }
+  }
+}

@@ -4,7 +4,7 @@
   min-height: var(--min-height);
 }
 @each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
-  @include breakpoints($bp) {
+  @include breakpoint($bp) {
     .#{$bp}\:rt-r-min-h {
       min-height: var(--min-height-#{$bp});
     }

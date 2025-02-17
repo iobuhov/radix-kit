@@ -1,0 +1,257 @@
+@use '../breakpoints' as *;
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*              All sides              */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.rt-r-p {
+  padding: var(--p);
+}
+@for $i from 0 through 9 {
+  .rt-r-p-#{$i} {
+    padding: var(--space-#{$i});
+  }
+}
+.rt-r-p-inset {
+  padding-top: var(--inset-padding-top);
+  padding-right: var(--inset-padding-right);
+  padding-bottom: var(--inset-padding-bottom);
+  padding-left: var(--inset-padding-left);
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-p {
+      padding: var(--p-#{$bp});
+    }
+    @for $i from 0 through 9 {
+      .#{$bp}\:rt-r-p-#{$i} {
+        padding: var(--space-#{$i});
+      }
+    }
+    .#{$bp}\:rt-r-p-inset {
+      padding-top: var(--inset-padding-top-#{$bp});
+      padding-right: var(--inset-padding-right-#{$bp});
+      padding-bottom: var(--inset-padding-bottom-#{$bp});
+      padding-left: var(--inset-padding-left-#{$bp});
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*           Left and right            */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.rt-r-px {
+  padding-left: var(--pl);
+  padding-right: var(--pr);
+}
+@for $i from 0 through 9 {
+  .rt-r-px-#{$i} {
+    padding-left: var(--space-#{$i});
+    padding-right: var(--space-#{$i});
+  }
+}
+.rt-r-px-inset {
+  padding-left: var(--inset-padding-left);
+  padding-right: var(--inset-padding-right);
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-px {
+      padding-left: var(--pl-#{$bp});
+      padding-right: var(--pr-#{$bp});
+    }
+    @for $i from 0 through 9 {
+      .#{$bp}\:rt-r-px-#{$i} {
+        padding-left: var(--space-#{$i});
+        padding-right: var(--space-#{$i});
+      }
+    }
+    .#{$bp}\:rt-r-px-inset {
+      padding-left: var(--inset-padding-left-#{$bp});
+      padding-right: var(--inset-padding-right-#{$bp});
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*           Top and bottom            */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.rt-r-py {
+  padding-top: var(--pt);
+  padding-bottom: var(--pb);
+}
+@for $i from 0 through 9 {
+  .rt-r-py-#{$i} {
+    padding-top: var(--space-#{$i});
+    padding-bottom: var(--space-#{$i});
+  }
+}
+.rt-r-py-inset {
+  padding-top: var(--inset-padding-top);
+  padding-bottom: var(--inset-padding-bottom);
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-py {
+      padding-top: var(--pt-#{$bp});
+      padding-bottom: var(--pb-#{$bp});
+    }
+    @for $i from 0 through 9 {
+      .#{$bp}\:rt-r-py-#{$i} {
+        padding-top: var(--space-#{$i});
+        padding-bottom: var(--space-#{$i});
+      }
+    }
+    .#{$bp}\:rt-r-py-inset {
+      padding-top: var(--inset-padding-top-#{$bp});
+      padding-bottom: var(--inset-padding-bottom-#{$bp});
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*                 Top                 */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.rt-r-pt {
+  padding-top: var(--pt);
+}
+@for $i from 0 through 9 {
+  .rt-r-pt-#{$i} {
+    padding-top: var(--space-#{$i});
+  }
+}
+.rt-r-pt-inset {
+  padding-top: var(--inset-padding-top);
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-pt {
+      padding-top: var(--pt-#{$bp});
+    }
+    @for $i from 0 through 9 {
+      .#{$bp}\:rt-r-pt-#{$i} {
+        padding-top: var(--space-#{$i});
+      }
+    }
+    .#{$bp}\:rt-r-pt-inset {
+      padding-top: var(--inset-padding-top-#{$bp});
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*                Right                */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.rt-r-pr {
+  padding-right: var(--pr);
+}
+@for $i from 0 through 9 {
+  .rt-r-pr-#{$i} {
+    padding-right: var(--space-#{$i});
+  }
+}
+.rt-r-pr-inset {
+  padding-right: var(--inset-padding-right);
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-pr {
+      padding-right: var(--pr-#{$bp});
+    }
+    @for $i from 0 through 9 {
+      .#{$bp}\:rt-r-pr-#{$i} {
+        padding-right: var(--space-#{$i});
+      }
+    }
+    .#{$bp}\:rt-r-pr-inset {
+      padding-right: var(--inset-padding-right-#{$bp});
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*               Bottom                */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.rt-r-pb {
+  padding-bottom: var(--pb);
+}
+@for $i from 0 through 9 {
+  .rt-r-pb-#{$i} {
+    padding-bottom: var(--space-#{$i});
+  }
+}
+.rt-r-pb-inset {
+  padding-bottom: var(--inset-padding-bottom);
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-pb {
+      padding-bottom: var(--pb-#{$bp});
+    }
+    @for $i from 0 through 9 {
+      .#{$bp}\:rt-r-pb-#{$i} {
+        padding-bottom: var(--space-#{$i});
+      }
+    }
+    .#{$bp}\:rt-r-pb-inset {
+      padding-bottom: var(--inset-padding-bottom-#{$bp});
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*                Left                 */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.rt-r-pl {
+  padding-left: var(--pl);
+}
+@for $i from 0 through 9 {
+  .rt-r-pl-#{$i} {
+    padding-left: var(--space-#{$i});
+  }
+}
+.rt-r-pl-inset {
+  padding-left: var(--inset-padding-left);
+}
+
+@each $bp in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include breakpoint($bp) {
+    .#{$bp}\:rt-r-pl {
+      padding-left: var(--pl-#{$bp});
+    }
+    @for $i from 0 through 9 {
+      .#{$bp}\:rt-r-pl-#{$i} {
+        padding-left: var(--space-#{$i});
+      }
+    }
+    .#{$bp}\:rt-r-pl-inset {
+      padding-left: var(--inset-padding-left-#{$bp});
+    }
+  }
+}
