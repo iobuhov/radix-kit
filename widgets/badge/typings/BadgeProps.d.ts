@@ -5,12 +5,19 @@
  */
 import { CSSProperties } from "react";
 
+export type SizeEnum = "s1" | "s2" | "s3" | "object";
+
+export type SizeXsEnum = "s1" | "s2" | "s3";
+
 export interface BadgeContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
     text: string;
+    size: SizeEnum;
+    sizeInitial: string;
+    sizeXs: SizeXsEnum;
 }
 
 export interface BadgePreviewProps {
@@ -25,4 +32,7 @@ export interface BadgePreviewProps {
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
     text: string;
+    size: SizeEnum;
+    sizeInitial: string;
+    sizeXs: SizeXsEnum;
 }
