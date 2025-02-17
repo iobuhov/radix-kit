@@ -1,5 +1,5 @@
 @forward 'reset';
-@import './animations.css';
+@forward 'animations';
 @import './layout.css';
 
 /* Import Skeleton before other components so that its default border-radius doesn’t have a higher specificity */
