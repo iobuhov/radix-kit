@@ -1,4 +1,6 @@
-@import './_internal/base-card.css';
+@use '../breakpoints' as *;
+
+@forward './_internal/base-card';
 
 /* stylelint-disable selector-max-type */
 /* Disable selector-max-type rule to target `button` and `a` tags. */
@@ -33,28 +35,36 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 
-@breakpoints {
+@mixin card-sizes($prefix) {
   .rt-Card {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --card-padding: var(--space-3);
       --card-border-radius: var(--radius-4);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --card-padding: var(--space-4);
       --card-border-radius: var(--radius-4);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --card-padding: var(--space-5);
       --card-border-radius: var(--radius-5);
     }
-    &:where(.rt-r-size-4) {
+    &:where(#{$prefix}-r-size-4) {
       --card-padding: var(--space-6);
       --card-border-radius: var(--radius-5);
     }
-    &:where(.rt-r-size-5) {
+    &:where(#{$prefix}-r-size-5) {
       --card-padding: var(--space-8);
       --card-border-radius: var(--radius-6);
     }
+  }
+}
+
+@include card-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include card-sizes('.#{$size}\\:rt');
   }
 }
 
