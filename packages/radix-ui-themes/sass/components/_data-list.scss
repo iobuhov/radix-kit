@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-DataListRoot {
   overflow-wrap: anywhere;
   font-family: var(--default-font-family);
@@ -73,17 +75,25 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 
-@breakpoints {
+@mixin data-list-sizes($prefix) {
   .rt-DataListRoot {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       gap: var(--space-3);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       gap: var(--space-4);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       gap: calc(var(--space-4) * 1.25);
     }
+  }
+}
+
+@include data-list-sizes('rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include data-list-sizes('.#{$size}\\:rt');
   }
 }
 
@@ -93,9 +103,9 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 
-@breakpoints {
+@mixin data-list-orientation($prefix) {
   .rt-DataListRoot {
-    &:where(.rt-r-orientation-vertical) {
+    &:where(#{$prefix}-r-orientation-vertical) {
       display: flex;
       flex-direction: column;
 
@@ -117,7 +127,7 @@
       }
     }
 
-    &:where(.rt-r-orientation-horizontal) {
+    &:where(#{$prefix}-r-orientation-horizontal) {
       display: grid;
       grid-template-columns: auto 1fr;
 
@@ -145,6 +155,14 @@
   }
 }
 
+@include data-list-orientation('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include data-list-orientation('.#{$size}\\:rt');
+  }
+}
+
 /* * * * * * * * * * * * * * * * * * * */
 /*                                     */
 /*              Alignment              */
@@ -162,7 +180,7 @@
   }
 }
 
-@breakpoints {
+@mixin data-list-alignment($prefix) {
   /*
    * Make sure that the margin adjustments cooperate with "align-items".
    * To do that, we need to remove the corresponding margin adjustment depending on the "align-items" value.
@@ -170,40 +188,48 @@
    */
   .rt-DataListItem {
     /* Match the default: poke out at the top and bottom, but not when it’s the first or last item */
-    &:where(.rt-r-ai-baseline) {
+    &:where(#{$prefix}-r-ai-baseline) {
       --data-list-value-trim-start: -0.25em;
       --data-list-value-trim-end: -0.25em;
       --data-list-first-item-value-trim-start: 0px;
       --data-list-last-item-value-trim-end: 0px;
     }
     /* No poking out at the top; and not at the bottom when it’s the first or last item */
-    &:where(.rt-r-ai-start) {
+    &:where(#{$prefix}-r-ai-start) {
       --data-list-value-trim-start: 0px;
       --data-list-value-trim-end: -0.25em;
       --data-list-first-item-value-trim-start: 0px;
       --data-list-last-item-value-trim-end: 0px;
     }
     /* Allow to poke out from any side, as for centering to work the top and bottom margins have to be always equal */
-    &:where(.rt-r-ai-center) {
+    &:where(#{$prefix}-r-ai-center) {
       --data-list-value-trim-start: -0.25em;
       --data-list-value-trim-end: -0.25em;
       --data-list-first-item-value-trim-start: -0.25em;
       --data-list-last-item-value-trim-end: -0.25em;
     }
     /* No poking out at the bottom; and not at the top when it’s the first or last item */
-    &:where(.rt-r-ai-end) {
+    &:where(#{$prefix}-r-ai-end) {
       --data-list-value-trim-start: -0.25em;
       --data-list-value-trim-end: 0px;
       --data-list-first-item-value-trim-start: 0px;
       --data-list-last-item-value-trim-end: 0px;
     }
     /* No poking out when stretched */
-    &:where(.rt-r-ai-stretch) {
+    &:where(#{$prefix}-r-ai-stretch) {
       --data-list-value-trim-start: 0px;
       --data-list-value-trim-end: 0px;
       --data-list-first-item-value-trim-start: 0px;
       --data-list-last-item-value-trim-end: 0px;
     }
+  }
+}
+
+@include data-list-alignment('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include data-list-alignment('.#{$size}\\:rt');
   }
 }
 
@@ -227,23 +253,31 @@
   }
 }
 
-@breakpoints {
+@mixin data-list-trim($prefix) {
   .rt-DataListRoot {
-    &:where(.rt-r-trim-normal) {
+    &:where(#{$prefix}-r-trim-normal) {
       --leading-trim-start: initial;
       --leading-trim-end: initial;
     }
-    &:where(.rt-r-trim-start) {
+    &:where(#{$prefix}-r-trim-start) {
       --leading-trim-start: var(--data-list-leading-trim-start);
       --leading-trim-end: initial;
     }
-    &:where(.rt-r-trim-end) {
+    &:where(#{$prefix}-r-trim-end) {
       --leading-trim-start: initial;
       --leading-trim-end: var(--data-list-leading-trim-end);
     }
-    &:where(.rt-r-trim-both) {
+    &:where(#{$prefix}-r-trim-both) {
       --leading-trim-start: var(--data-list-leading-trim-start);
       --leading-trim-end: var(--data-list-leading-trim-end);
     }
+  }
+}
+
+@include data-list-trim('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include data-list-trim('.#{$size}\\:rt');
   }
 }

@@ -1,3 +1,4 @@
+@use '../breakpoints' as *;
 /* stylelint-disable selector-max-type */
 /* Disable selector-max-type rule to target individual element types. */
 
@@ -8,7 +9,9 @@
   font-style: var(--code-font-style);
   font-weight: var(--code-font-weight);
   line-height: 1.25;
-  letter-spacing: calc(var(--code-letter-spacing) + var(--letter-spacing, var(--default-letter-spacing)));
+  letter-spacing: calc(
+    var(--code-letter-spacing) + var(--letter-spacing, var(--default-letter-spacing))
+  );
   border-radius: calc((0.5px + 0.2em) * var(--radius-factor));
 
   box-sizing: border-box;
@@ -31,53 +34,61 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin code-sizes($prefix) {
   .rt-Code {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       font-size: calc(var(--font-size-1) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-1);
       --letter-spacing: var(--letter-spacing-1);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       font-size: calc(var(--font-size-2) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-2);
       --letter-spacing: var(--letter-spacing-2);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       font-size: calc(var(--font-size-3) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-3);
       --letter-spacing: var(--letter-spacing-3);
     }
-    &:where(.rt-r-size-4) {
+    &:where(#{$prefix}-r-size-4) {
       font-size: calc(var(--font-size-4) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-4);
       --letter-spacing: var(--letter-spacing-4);
     }
-    &:where(.rt-r-size-5) {
+    &:where(#{$prefix}-r-size-5) {
       font-size: calc(var(--font-size-5) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-5);
       --letter-spacing: var(--letter-spacing-5);
     }
-    &:where(.rt-r-size-6) {
+    &:where(#{$prefix}-r-size-6) {
       font-size: calc(var(--font-size-6) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-6);
       --letter-spacing: var(--letter-spacing-6);
     }
-    &:where(.rt-r-size-7) {
+    &:where(#{$prefix}-r-size-7) {
       font-size: calc(var(--font-size-7) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-7);
       --letter-spacing: var(--letter-spacing-7);
     }
-    &:where(.rt-r-size-8) {
+    &:where(#{$prefix}-r-size-8) {
       font-size: calc(var(--font-size-8) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-8);
       --letter-spacing: var(--letter-spacing-8);
     }
-    &:where(.rt-r-size-9) {
+    &:where(#{$prefix}-r-size-9) {
       font-size: calc(var(--font-size-9) * var(--code-variant-font-size-adjust));
       line-height: var(--line-height-9);
       --letter-spacing: var(--letter-spacing-9);
     }
+  }
+}
+
+@include code-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include code-sizes('.#{$size}\\:rt');
   }
 }
 
@@ -169,7 +180,9 @@
   color: var(--accent-a11);
 
   &:where(.rt-high-contrast) {
-    box-shadow: inset 0 0 0 max(1px, 0.033em) var(--accent-a7), inset 0 0 0 max(1px, 0.033em) var(--gray-a11);
+    box-shadow:
+      inset 0 0 0 max(1px, 0.033em) var(--accent-a7),
+      inset 0 0 0 max(1px, 0.033em) var(--gray-a11);
     color: var(--accent-12);
   }
 
