@@ -1,4 +1,5 @@
-@import './_internal/base-card.css';
+@use '../breakpoints' as *;
+@forward './_internal/base-card';
 
 .rt-RadioCardsRoot {
   line-height: var(--line-height);
@@ -39,10 +40,10 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 
-@breakpoints {
+@mixin radio-sizes($prefix) {
   .rt-RadioCardsRoot {
     /* 40px height for the card with one line of text */
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       font-size: var(--font-size-2);
       --line-height: var(--line-height-2);
       --letter-spacing: var(--letter-spacing-2);
@@ -51,7 +52,7 @@
       --radio-cards-item-border-radius: var(--radius-3);
     }
     /* 48px height for the card with one line of text */
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       font-size: var(--font-size-2);
       --line-height: var(--line-height-2);
       --letter-spacing: var(--letter-spacing-2);
@@ -60,7 +61,7 @@
       --radio-cards-item-border-radius: var(--radius-3);
     }
     /* 64px height for the card with one line of text */
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       font-size: var(--font-size-3);
       --line-height: var(--line-height-3);
       --letter-spacing: var(--letter-spacing-3);
@@ -68,6 +69,14 @@
       --radio-cards-item-padding-y: calc(var(--space-5) / 1.2);
       --radio-cards-item-border-radius: var(--radius-4);
     }
+  }
+}
+
+@include radio-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include radio-sizes('.#{$size}\\:rt');
   }
 }
 
