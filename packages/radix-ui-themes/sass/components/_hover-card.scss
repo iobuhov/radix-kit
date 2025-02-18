@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-HoverCardContent {
   background-color: var(--color-panel-solid);
   box-shadow: var(--shadow-4);
@@ -20,19 +22,27 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin hover-card-sizes($prefix) {
   .rt-HoverCardContent {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --hover-card-content-padding: var(--space-3);
       border-radius: var(--radius-4);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --hover-card-content-padding: var(--space-4);
       border-radius: var(--radius-4);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --hover-card-content-padding: var(--space-5);
       border-radius: var(--radius-5);
     }
+  }
+}
+
+@include hover-card-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include hover-card-sizes('.#{$size}\\:rt');
   }
 }
