@@ -9,8 +9,8 @@
     var(--em-letter-spacing) + var(--letter-spacing, var(--default-letter-spacing))
   );
   color: inherit;
+}
 
-  & :where(&) {
-    font-size: inherit;
-  }
+.rt-Em :where(.rt-Em) {
+  font-size: inherit;
 }
