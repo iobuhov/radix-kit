@@ -1,6 +1,6 @@
 # Ignore everything by default.
 # This to make sure we include only needed files and don't ship any garbage.
-# If you need to include a file, make user it's parent directories also included.
+# If you need to include a file, make sure it's parent directories also included.
 *
 !.gitignore
 !RadixKit_Base.mpr
