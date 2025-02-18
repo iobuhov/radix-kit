@@ -1,3 +1,5 @@
+@use '../../breakpoints' as *;
+
 .rt-BaseTabList {
   display: flex;
   justify-content: flex-start;
@@ -71,9 +73,9 @@
   border-radius: var(--tab-inner-border-radius);
 }
 
-@breakpoints {
+@mixin base-tab-list-sizes($prefix) {
   .rt-BaseTabList {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       font-size: var(--font-size-1);
       line-height: var(--line-height-1);
       letter-spacing: var(--letter-spacing-1);
@@ -83,7 +85,7 @@
       --tab-inner-padding-y: calc(var(--space-1) * 0.5);
       --tab-inner-border-radius: var(--radius-1);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       font-size: var(--font-size-2);
       line-height: var(--line-height-2);
       letter-spacing: var(--letter-spacing-2);
@@ -93,6 +95,14 @@
       --tab-inner-padding-y: var(--space-1);
       --tab-inner-border-radius: var(--radius-2);
     }
+  }
+}
+
+@include base-tab-list-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include base-tab-list-sizes('.#{$size}\\:rt');
   }
 }
 

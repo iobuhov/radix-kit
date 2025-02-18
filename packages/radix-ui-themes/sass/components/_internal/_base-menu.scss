@@ -1,3 +1,5 @@
+@use '../../breakpoints' as *;
+
 .rt-BaseMenuContent {
   --scrollarea-scrollbar-vertical-margin-top: var(--base-menu-content-padding);
   --scrollarea-scrollbar-vertical-margin-bottom: var(--base-menu-content-padding);
@@ -101,9 +103,9 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin base-menu-sizes($prefix) {
   .rt-BaseMenuContent {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --base-menu-content-padding: var(--space-1);
       --base-menu-item-padding-left: calc(var(--space-5) / 1.2);
       --base-menu-item-padding-right: var(--space-2);
@@ -137,7 +139,7 @@
       }
     }
 
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --base-menu-content-padding: var(--space-2);
       --base-menu-item-padding-left: var(--space-3);
       --base-menu-item-padding-right: var(--space-3);
@@ -170,6 +172,14 @@
         --base-menu-item-padding-left: var(--space-5);
       }
     }
+  }
+}
+
+@include base-menu-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include base-menu-sizes('.#{$size}\\:rt');
   }
 }
 

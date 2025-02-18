@@ -1,3 +1,5 @@
+@use '../../breakpoints' as *;
+
 .rt-BaseDialogOverlay {
   position: fixed;
   inset: 0;
@@ -26,12 +28,20 @@
   padding-right: var(--space-4);
 }
 
-@breakpoints {
-  .rt-BaseDialogScrollPadding:where(.rt-r-align-start) {
+@mixin base-dialog-align($prefix) {
+  .rt-BaseDialogScrollPadding:where(#{$prefix}-r-align-start) {
     margin-top: 0;
   }
-  .rt-BaseDialogScrollPadding:where(.rt-r-align-center) {
+  .rt-BaseDialogScrollPadding:where(#{$prefix}-r-align-center) {
     margin-top: auto;
+  }
+}
+
+@include base-dialog-align('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include base-dialog-align('.#{$size}\\:rt');
   }
 }
 
@@ -61,24 +71,32 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin base-dialog-sizes($prefix) {
   .rt-BaseDialogContent {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --dialog-content-padding: var(--space-3);
       border-radius: var(--radius-4);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --dialog-content-padding: var(--space-4);
       border-radius: var(--radius-4);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --dialog-content-padding: var(--space-5);
       border-radius: var(--radius-5);
     }
-    &:where(.rt-r-size-4) {
+    &:where(#{$prefix}-r-size-4) {
       --dialog-content-padding: var(--space-6);
       border-radius: var(--radius-5);
     }
+  }
+}
+
+@include base-dialog-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include base-dialog-sizes('.#{$size}\\:rt');
   }
 }
 
