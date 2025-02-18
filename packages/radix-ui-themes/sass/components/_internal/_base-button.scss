@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-BaseButton {
   display: inline-flex;
   align-items: center;
@@ -37,28 +39,36 @@
   }
 }
 
-@breakpoints {
+@mixin base-button-sizes($prefix) {
   .rt-BaseButton {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --base-button-classic-active-padding-top: 1px;
       --base-button-height: var(--space-5);
       border-radius: max(var(--radius-1), var(--radius-full));
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --base-button-classic-active-padding-top: 2px;
       --base-button-height: var(--space-6);
       border-radius: max(var(--radius-2), var(--radius-full));
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --base-button-classic-active-padding-top: 2px;
       --base-button-height: var(--space-7);
       border-radius: max(var(--radius-3), var(--radius-full));
     }
-    &:where(.rt-r-size-4) {
+    &:where(#{$prefix}-r-size-4) {
       --base-button-classic-active-padding-top: 2px;
       --base-button-height: var(--space-8);
       border-radius: max(var(--radius-4), var(--radius-full));
     }
+  }
+}
+
+@include base-button-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include base-button-sizes('.#{$size}\\:rt');
   }
 }
 
@@ -397,7 +407,9 @@
     outline-offset: -1px;
   }
   &:where(.rt-high-contrast) {
-    box-shadow: inset 0 0 0 1px var(--accent-a7), inset 0 0 0 1px var(--gray-a11);
+    box-shadow:
+      inset 0 0 0 1px var(--accent-a7),
+      inset 0 0 0 1px var(--gray-a11);
     color: var(--accent-12);
   }
   &:where([data-disabled]) {
