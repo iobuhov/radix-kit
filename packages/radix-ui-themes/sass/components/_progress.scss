@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-ProgressRoot {
   --progress-value: 0;
   --progress-max: 100;
@@ -38,7 +40,8 @@
   transition: transform 120ms;
 
   &:where([data-state='indeterminate']) {
-    animation-name: rt-progress-indicator-indeterminate-grow, var(--progress-indicator-indeterminate-animation-start),
+    animation-name: rt-progress-indicator-indeterminate-grow,
+      var(--progress-indicator-indeterminate-animation-start),
       var(--progress-indicator-indeterminate-animation-repeat);
     animation-delay: 0s, calc(var(--progress-duration) + 5s), calc(var(--progress-duration) + 7.5s);
     animation-duration: var(--progress-duration), 2.5s, 5s;
@@ -103,17 +106,25 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin progress-sizes($prefix) {
   .rt-ProgressRoot {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --progress-height: var(--space-1);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --progress-height: calc(var(--space-2) * 0.75);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --progress-height: var(--space-2);
     }
+  }
+}
+
+@include progress-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include progress-sizes('.#{$size}\\:rt');
   }
 }
 
