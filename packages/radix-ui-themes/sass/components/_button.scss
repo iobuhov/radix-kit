@@ -1,4 +1,6 @@
-@import './_internal/base-button.css';
+@use '../breakpoints' as *;
+
+@forward './_internal/base-button';
 
 .rt-Button {
   &:where(:not(.rt-variant-ghost)) {
@@ -45,9 +47,9 @@
   }
 }
 
-@breakpoints {
+@mixin button-sizes($prefix) {
   .rt-Button {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       gap: var(--space-1);
       font-size: var(--font-size-1);
       line-height: var(--line-height-1);
@@ -63,7 +65,7 @@
         --button-ghost-padding-y: var(--space-1);
       }
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       gap: var(--space-2);
       font-size: var(--font-size-2);
       line-height: var(--line-height-2);
@@ -79,7 +81,7 @@
         --button-ghost-padding-y: var(--space-1);
       }
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       gap: var(--space-3);
       font-size: var(--font-size-3);
       line-height: var(--line-height-3);
@@ -95,7 +97,7 @@
         --button-ghost-padding-y: calc(var(--space-1) * 1.5);
       }
     }
-    &:where(.rt-r-size-4) {
+    &:where(#{$prefix}-r-size-4) {
       gap: var(--space-3);
       font-size: var(--font-size-4);
       line-height: var(--line-height-4);
@@ -111,6 +113,14 @@
         --button-ghost-padding-y: var(--space-2);
       }
     }
+  }
+}
+
+@include button-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include button-sizes('.#{$size}\\:rt');
   }
 }
 
