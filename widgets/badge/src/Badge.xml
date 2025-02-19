@@ -19,29 +19,6 @@
                 <caption>Text</caption>
                 <description />
             </property>
-            <property key="size" type="enumeration" defaultValue="s1">
-                <caption>Size</caption>
-                <description />
-                <enumerationValues>
-                    <enumerationValue key="s1">1</enumerationValue>
-                    <enumerationValue key="s2">2</enumerationValue>
-                    <enumerationValue key="s3">3</enumerationValue>
-                    <enumerationValue key="object">Responsive</enumerationValue>
-                </enumerationValues>
-            </property>
-            <property key="sizeInitial" type="string">
-                <caption>Size Initial</caption>
-                <description />
-            </property>
-            <property key="sizeXs" type="enumeration" defaultValue="s1">
-                <caption>Size Phones (portrait)</caption>
-                <description />
-                <enumerationValues>
-                    <enumerationValue key="s1">1</enumerationValue>
-                    <enumerationValue key="s2">2</enumerationValue>
-                    <enumerationValue key="s3">3</enumerationValue>
-                </enumerationValues>
-            </property>
         </propertyGroup>
     </properties>
 </widget>
