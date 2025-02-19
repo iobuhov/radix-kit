@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-TextFieldRoot {
   display: flex;
   align-items: stretch;
@@ -184,9 +186,9 @@
   }
 }
 
-@breakpoints {
+@mixin text-field-sizes($prefix) {
   .rt-TextFieldRoot {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --text-field-height: var(--space-5);
       --text-field-padding: calc(var(--space-1) * 1.5 - var(--text-field-border-width));
       --text-field-border-radius: max(var(--radius-2), var(--radius-full));
@@ -212,7 +214,7 @@
       }
     }
 
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --text-field-height: var(--space-6);
       --text-field-padding: calc(var(--space-2) - var(--text-field-border-width));
       --text-field-border-radius: max(var(--radius-2), var(--radius-full));
@@ -239,7 +241,7 @@
       }
     }
 
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --text-field-height: var(--space-7);
       --text-field-padding: calc(var(--space-3) - var(--text-field-border-width));
       --text-field-border-radius: max(var(--radius-3), var(--radius-full));
@@ -264,6 +266,14 @@
         padding-right: var(--space-3);
       }
     }
+  }
+}
+
+@include text-field-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include text-field-sizes('.#{$size}\\:rt');
   }
 }
 

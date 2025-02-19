@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-TableRootTable {
   --table-row-background-color: transparent;
   --table-row-box-shadow: inset 0 -1px var(--gray-a5);
@@ -57,9 +59,9 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin table-sizes($prefix) {
   .rt-TableRoot {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --table-border-radius: var(--radius-3);
       --table-cell-padding: var(--space-2);
       --table-cell-min-height: calc(36px * var(--scaling));
@@ -69,7 +71,7 @@
         line-height: var(--line-height-2);
       }
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --table-border-radius: var(--radius-4);
       --table-cell-padding: var(--space-3);
       --table-cell-min-height: calc(44px * var(--scaling));
@@ -79,7 +81,7 @@
         line-height: var(--line-height-2);
       }
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --table-border-radius: var(--radius-4);
       --table-cell-padding: var(--space-3) var(--space-4);
       --table-cell-min-height: var(--space-8);
@@ -89,6 +91,14 @@
         line-height: var(--line-height-3);
       }
     }
+  }
+}
+
+@include table-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include table-sizes('.#{$size}\\:rt');
   }
 }
 

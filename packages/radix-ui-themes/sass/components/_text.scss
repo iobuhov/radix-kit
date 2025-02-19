@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-Text {
   line-height: var(--line-height, var(--default-line-height));
   letter-spacing: var(--letter-spacing, inherit);
@@ -34,52 +36,60 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin text-sizes($prefix) {
   .rt-Text {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       font-size: var(--font-size-1);
       --line-height: var(--line-height-1);
       --letter-spacing: var(--letter-spacing-1);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       font-size: var(--font-size-2);
       --line-height: var(--line-height-2);
       --letter-spacing: var(--letter-spacing-2);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       font-size: var(--font-size-3);
       --line-height: var(--line-height-3);
       --letter-spacing: var(--letter-spacing-3);
     }
-    &:where(.rt-r-size-4) {
+    &:where(#{$prefix}-r-size-4) {
       font-size: var(--font-size-4);
       --line-height: var(--line-height-4);
       --letter-spacing: var(--letter-spacing-4);
     }
-    &:where(.rt-r-size-5) {
+    &:where(#{$prefix}-r-size-5) {
       font-size: var(--font-size-5);
       --line-height: var(--line-height-5);
       --letter-spacing: var(--letter-spacing-5);
     }
-    &:where(.rt-r-size-6) {
+    &:where(#{$prefix}-r-size-6) {
       font-size: var(--font-size-6);
       --line-height: var(--line-height-6);
       --letter-spacing: var(--letter-spacing-6);
     }
-    &:where(.rt-r-size-7) {
+    &:where(#{$prefix}-r-size-7) {
       font-size: var(--font-size-7);
       --line-height: var(--line-height-7);
       --letter-spacing: var(--letter-spacing-7);
     }
-    &:where(.rt-r-size-8) {
+    &:where(#{$prefix}-r-size-8) {
       font-size: var(--font-size-8);
       --line-height: var(--line-height-8);
       --letter-spacing: var(--letter-spacing-8);
     }
-    &:where(.rt-r-size-9) {
+    &:where(#{$prefix}-r-size-9) {
       font-size: var(--font-size-9);
       --line-height: var(--line-height-9);
       --letter-spacing: var(--letter-spacing-9);
     }
+  }
+}
+
+@include text-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include text-sizes('.#{$size}\\:rt');
   }
 }

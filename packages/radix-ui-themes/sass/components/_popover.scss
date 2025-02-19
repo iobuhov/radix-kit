@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-PopoverContent {
   background-color: var(--color-panel-solid);
   box-shadow: var(--shadow-5);

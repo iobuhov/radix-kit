@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-TextAreaRoot {
   display: flex;
   flex-direction: column;
@@ -72,9 +74,9 @@
   padding: var(--text-area-padding-y) var(--text-area-padding-x);
 }
 
-@breakpoints {
+@mixin text-area-sizes($prefix) {
   .rt-TextAreaRoot {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       min-height: var(--space-8);
       border-radius: var(--radius-2);
 
@@ -87,7 +89,7 @@
         letter-spacing: var(--letter-spacing-1);
       }
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       min-height: var(--space-9);
       border-radius: var(--radius-2);
 
@@ -100,7 +102,7 @@
         letter-spacing: var(--letter-spacing-2);
       }
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       min-height: 80px;
       border-radius: var(--radius-3);
 
@@ -113,6 +115,14 @@
         letter-spacing: var(--letter-spacing-3);
       }
     }
+  }
+}
+
+@include text-area-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include text-area-sizes('.#{$size}\\:rt');
   }
 }
 
