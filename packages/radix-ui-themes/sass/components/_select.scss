@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-SelectTrigger {
   display: inline-flex;
   align-items: center;
@@ -154,9 +156,9 @@
   }
 }
 
-@breakpoints {
+@mixin select-trigger-sizes($prefix) {
   .rt-SelectTrigger {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --select-trigger-height: var(--space-5);
       gap: var(--space-1);
       font-size: var(--font-size-1);
@@ -173,7 +175,7 @@
         --select-trigger-ghost-padding-y: var(--space-1);
       }
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --select-trigger-height: var(--space-6);
       gap: calc(var(--space-1) * 1.5);
       font-size: var(--font-size-2);
@@ -190,7 +192,7 @@
         --select-trigger-ghost-padding-y: var(--space-1);
       }
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --select-trigger-height: var(--space-7);
       gap: var(--space-2);
       font-size: var(--font-size-3);
@@ -214,15 +216,23 @@
   }
 }
 
+@include select-trigger-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include select-trigger-sizes('.#{$size}\\:rt');
+  }
+}
+
 /***************************************************************************************************
  *                                                                                                 *
  * CONTENT SIZES                                                                                   *
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin select-content-sizes($prefix) {
   .rt-SelectContent {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --select-content-padding: var(--space-1);
       --select-item-height: var(--space-5);
       --select-item-indicator-width: calc(var(--space-5) / 1.2);
@@ -245,7 +255,7 @@
         height: calc(8px * var(--scaling));
       }
     }
-    &:where(.rt-r-size-2, .rt-r-size-3) {
+    &:where(#{$prefix}-r-size-2, #{$prefix}-r-size-3) {
       --select-content-padding: var(--space-2);
       --select-item-height: var(--space-6);
       --select-item-indicator-width: var(--space-5);
@@ -262,7 +272,7 @@
         border-radius: var(--radius-2);
       }
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       & :where(.rt-SelectItem) {
         font-size: var(--font-size-2);
         letter-spacing: var(--letter-spacing-2);
@@ -272,7 +282,7 @@
         height: calc(10px * var(--scaling));
       }
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       & :where(.rt-SelectItem) {
         font-size: var(--font-size-3);
         letter-spacing: var(--letter-spacing-3);
@@ -282,6 +292,14 @@
         height: calc(10px * var(--scaling));
       }
     }
+  }
+}
+
+@include select-content-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include select-content-sizes('.#{$size}\\:rt');
   }
 }
 
@@ -361,7 +379,9 @@
 
   @media (hover: hover) {
     &:where(:hover) {
-      box-shadow: inset 0 0 0 1px var(--gray-a3), var(--select-trigger-classic-box-shadow);
+      box-shadow:
+        inset 0 0 0 1px var(--gray-a3),
+        var(--select-trigger-classic-box-shadow);
 
       &::before {
         background-image: linear-gradient(var(--black-a1) -15%, transparent, var(--white-a1) 120%),
@@ -370,7 +390,9 @@
     }
   }
   &:where([data-state='open']) {
-    box-shadow: inset 0 0 0 1px var(--gray-a3), var(--select-trigger-classic-box-shadow);
+    box-shadow:
+      inset 0 0 0 1px var(--gray-a3),
+      var(--select-trigger-classic-box-shadow);
 
     &::before {
       background-image: linear-gradient(var(--black-a1) -15%, transparent, var(--white-a1) 120%),
