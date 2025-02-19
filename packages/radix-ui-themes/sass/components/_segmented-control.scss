@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .radix-themes {
   --segmented-control-transition-duration: 100ms;
 }
@@ -245,9 +247,9 @@
   border-radius: var(--segmented-control-border-radius);
 }
 
-@breakpoints {
+@mixin segmented-control-sizes($prefix) {
   .rt-SegmentedControlRoot {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --segmented-control-border-radius: max(var(--radius-2), var(--radius-full));
       height: var(--space-5);
 
@@ -259,7 +261,7 @@
         gap: var(--space-1);
       }
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --segmented-control-border-radius: max(var(--radius-2), var(--radius-full));
       height: var(--space-6);
 
@@ -271,7 +273,7 @@
         gap: var(--space-2);
       }
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --segmented-control-border-radius: max(var(--radius-3), var(--radius-full));
       height: var(--space-7);
 
@@ -283,6 +285,14 @@
         gap: var(--space-3);
       }
     }
+  }
+}
+
+@include segmented-control-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include segmented-control-sizes('.#{$size}\\:rt');
   }
 }
 

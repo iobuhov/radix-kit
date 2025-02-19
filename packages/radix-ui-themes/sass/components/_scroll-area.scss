@@ -86,15 +86,15 @@
 
 @mixin scroll-area-sizes($prefix) {
   .rt-ScrollAreaScrollbar {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --scrollarea-scrollbar-size: var(--space-1);
       --scrollarea-scrollbar-border-radius: max(var(--radius-1), var(--radius-full));
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --scrollarea-scrollbar-size: var(--space-2);
       --scrollarea-scrollbar-border-radius: max(var(--radius-1), var(--radius-full));
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --scrollarea-scrollbar-size: var(--space-3);
       --scrollarea-scrollbar-border-radius: max(var(--radius-1), var(--radius-full));
     }
