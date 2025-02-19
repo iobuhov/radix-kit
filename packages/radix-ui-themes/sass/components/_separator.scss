@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .rt-Separator {
   display: block;
   background-color: var(--accent-a6);
@@ -9,16 +11,24 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin separator-orientation($prefix) {
   .rt-Separator {
-    &:where(.rt-r-orientation-horizontal) {
+    &:where(#{$prefix}-r-orientation-horizontal) {
       width: var(--separator-size);
       height: 1px;
     }
-    &:where(.rt-r-orientation-vertical) {
+    &:where(#{$prefix}-r-orientation-vertical) {
       width: 1px;
       height: var(--separator-size);
     }
+  }
+}
+
+@include separator-orientation('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include separator-orientation('.#{$size}\\:rt');
   }
 }
 
@@ -28,19 +38,27 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin separator-sizes($prefix) {
   .rt-Separator {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       --separator-size: var(--space-4);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       --separator-size: var(--space-6);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       --separator-size: var(--space-9);
     }
-    &:where(.rt-r-size-4) {
+    &:where(#{$prefix}-r-size-4) {
       --separator-size: 100%;
     }
+  }
+}
+
+@include separator-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include separator-sizes('.#{$size}\\:rt');
   }
 }
