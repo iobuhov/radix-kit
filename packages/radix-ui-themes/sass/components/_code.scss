@@ -22,10 +22,10 @@
 
   /* Make sure that the height is not stretched in a Flex/Grid layout */
   height: fit-content;
+}
 
-  & :where(&) {
-    font-size: inherit;
-  }
+.rt-Code :where(.rt-Code) {
+  font-size: inherit;
 }
 
 /***************************************************************************************************

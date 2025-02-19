@@ -4,10 +4,6 @@
   line-height: var(--line-height, var(--default-line-height));
   letter-spacing: var(--letter-spacing, inherit);
 
-  :where(&) {
-    margin: 0;
-  }
-
   &:where([data-accent-color]) {
     color: var(--accent-a11);
   }
@@ -28,6 +24,10 @@
       }
     }
   }
+}
+
+:where(.rt-Text) {
+  margin: 0;
 }
 
 /***************************************************************************************************
