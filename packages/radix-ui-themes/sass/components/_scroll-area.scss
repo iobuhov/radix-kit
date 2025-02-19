@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .radix-themes {
   --scrollarea-scrollbar-horizontal-margin-top: var(--space-1);
   --scrollarea-scrollbar-horizontal-margin-bottom: var(--space-1);
@@ -82,7 +84,7 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin scroll-area-sizes($prefix) {
   .rt-ScrollAreaScrollbar {
     &:where(.rt-r-size-1) {
       --scrollarea-scrollbar-size: var(--space-1);
@@ -96,6 +98,14 @@
       --scrollarea-scrollbar-size: var(--space-3);
       --scrollarea-scrollbar-border-radius: max(var(--radius-1), var(--radius-full));
     }
+  }
+}
+
+@include scroll-area-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include scroll-area-sizes('.#{$size}\\:rt');
   }
 }
 
