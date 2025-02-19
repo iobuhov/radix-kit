@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .radix-themes {
   --spinner-animation-duration: 800ms;
   --spinner-opacity: 0.65;
@@ -75,19 +77,27 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-@breakpoints {
+@mixin spinner-sizes($prefix) {
   .rt-Spinner {
-    &:where(.rt-r-size-1) {
+    &:where(#{$prefix}-r-size-1) {
       width: var(--space-3);
       height: var(--space-3);
     }
-    &:where(.rt-r-size-2) {
+    &:where(#{$prefix}-r-size-2) {
       width: var(--space-4);
       height: var(--space-4);
     }
-    &:where(.rt-r-size-3) {
+    &:where(#{$prefix}-r-size-3) {
       width: calc(1.25 * var(--space-4));
       height: calc(1.25 * var(--space-4));
     }
+  }
+}
+
+@include spinner-sizes('.rt');
+
+@each $size in (xs, sm, md, lg, xl) {
+  @include breakpoint($size) {
+    @include spinner-sizes('.#{$size}\\:rt');
   }
 }
