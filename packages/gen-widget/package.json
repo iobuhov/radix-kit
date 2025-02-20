@@ -1,18 +1,9 @@
 {
-  "name": "create-mx-widget",
+  "name": "gen-widget",
   "version": "1.0.0",
   "description": "A CLI tool for fast widget scaffolding using Plop.js",
   "type": "module",
-  "bin": {
-    "create-mx-widget": "./index.mjs"
-  },
-  "scripts": {
-    "start": "plop"
-  },
-  "dependencies": {
-    "minimist": "^1.2.8",
-    "plop": "^4.0.1"
-  },
+  "dependencies": {},
   "keywords": [
     "plop",
     "cli",
