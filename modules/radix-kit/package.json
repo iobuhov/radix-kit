@@ -1,0 +1,14 @@
+{
+  "name": "radix-kit",
+  "version": "0.1.0",
+  "description": "Radix Kit",
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "tsx": "^4.19.2",
+    "zx": "^8.3.2"
+  },
+  "dependencies": {
+    "@radix-ui/themes-radix-kit": "workspace:*",
+    "@tsconfig/node22": "^22.0.0"
+  }
+}
