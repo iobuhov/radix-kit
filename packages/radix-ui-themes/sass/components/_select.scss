@@ -144,6 +144,7 @@
     --margin-left-override: calc(var(--margin-left) - var(--select-trigger-ghost-padding-x));
 
     /* Reset the overrides on direct children */
+    //todo
     :where(&) > * {
       --margin-top-override: initial;
       --margin-right-override: initial;
