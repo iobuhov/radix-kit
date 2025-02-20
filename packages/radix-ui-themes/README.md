@@ -33,6 +33,8 @@ See our [contribution guidelines](../../.github/CONTRIBUTING.md) for information
 
 ## License
 
-Licensed under the MIT License, Copyright © 2023-present [WorkOS](https://workos.com).
+Licensed under the MIT License,
+Copyright © 2025 Illia Obukhau
+Copyright © 2023-2025 [WorkOS](https://workos.com).
 
 See [LICENSE](./LICENSE) for more information.
