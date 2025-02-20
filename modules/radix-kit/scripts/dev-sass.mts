@@ -13,4 +13,4 @@ import 'zx/globals';
 
 // console.log('projectPath', projectPath);
 
-fs.copy('./node_modules/radix-ui-themes/sass', './sass');
+fs.copy('./node_modules/@radix-ui/themes-radix-kit/sass', './sass');

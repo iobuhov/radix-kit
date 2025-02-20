@@ -57,7 +57,7 @@ importers:
     dependencies:
       '@radix-ui/themes-radix-kit':
         specifier: workspace:*
-        version: link:../../packages/radix-ui-themes
+        version: link:../../packages/themes-radix-kit
       '@tsconfig/node22':
         specifier: ^22.0.0
         version: 22.0.0
@@ -74,7 +74,7 @@ importers:
 
   packages/gen-widget: {}
 
-  packages/radix-ui-themes:
+  packages/themes-radix-kit:
     dependencies:
       '@radix-ui/colors':
         specifier: ^3.0.0
@@ -175,7 +175,7 @@ importers:
     dependencies:
       '@radix-ui/themes-radix-kit':
         specifier: workspace:^
-        version: link:../../packages/radix-ui-themes
+        version: link:../../packages/themes-radix-kit
       classnames:
         specifier: ^2.2.6
         version: 2.5.1
@@ -197,7 +197,7 @@ importers:
     dependencies:
       '@radix-ui/themes-radix-kit':
         specifier: workspace:^
-        version: link:../../packages/radix-ui-themes
+        version: link:../../packages/themes-radix-kit
       classnames:
         specifier: ^2.2.6
         version: 2.5.1
@@ -219,7 +219,7 @@ importers:
     dependencies:
       '@radix-ui/themes-radix-kit':
         specifier: workspace:^
-        version: link:../../packages/radix-ui-themes
+        version: link:../../packages/themes-radix-kit
       classnames:
         specifier: ^2.2.6
         version: 2.5.1
