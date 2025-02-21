@@ -1,6 +1,6 @@
 import { dest, src } from 'gulp';
 import path from 'node:path';
-import { inspectFiles } from './inspect-files.mjs';
+import { inspectFiles } from '../inspect-files.mjs';
 
 const glob = 'node_modules/@radix-ui/themes-radix-kit/sass/**/*.{scss,css}';
 

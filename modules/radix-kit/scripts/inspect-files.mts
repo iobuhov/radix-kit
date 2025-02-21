@@ -16,11 +16,9 @@ export function inspectFiles(options: { title?: string } = {}) {
     for (let i = 0; i < srcPaths.length; i++) {
       const file = path.parse(srcPaths[i]);
       const fileDir = pc.gray(path.relative(process.cwd(), file.dir) + path.sep);
-      const fileBase = pc.green(file.base);
-      let msg = '';
-      msg += `${fileDir}${fileBase}`;
-      msg += `\n-> ${destPaths[i]}`;
-      log.info(msg);
+      const fileBase = pc.underline(file.base);
+      log.info(`${fileDir}${fileBase}`);
+      log.info(`-> ${pc.green(destPaths[i])}`);
     }
     log.info(`Total files: ${pc.cyan(srcPaths.length)}`);
   });

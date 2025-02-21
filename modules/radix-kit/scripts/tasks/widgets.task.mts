@@ -1,6 +1,6 @@
 import { dest, src } from 'gulp';
 import rename from 'gulp-rename';
-import { inspectFiles } from './inspect-files.mjs';
+import { inspectFiles } from '../inspect-files.mjs';
 
 const globs = ['node_modules/*/dist/*/*.mpk', 'node_modules/*/*/dist/*/*.mpk'];
 
