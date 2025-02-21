@@ -266,6 +266,28 @@ importers:
         specifier: ^10.19.57669
         version: 10.19.57669
 
+  widgets/fobo:
+    dependencies:
+      '@radix-ui/themes-radix-kit':
+        specifier: workspace:^
+        version: link:../../packages/themes-radix-kit
+      classnames:
+        specifier: ^2.2.6
+        version: 2.5.1
+    devDependencies:
+      '@mendix/pluggable-widgets-tools':
+        specifier: ^10.15.0
+        version: 10.18.0(@jest/transform@29.7.0)(@jest/types@29.6.3)(@types/babel__core@7.20.5)(@types/node@20.17.16)(picomatch@4.0.2)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.26.8)(@babel/preset-env@7.26.8(@babel/core@7.26.8))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)(tslib@2.8.1)
+      '@prettier/plugin-xml':
+        specifier: ^3.4.1
+        version: 3.4.1(prettier@3.4.2)
+      '@types/big.js':
+        specifier: ^6.0.2
+        version: 6.2.2
+      mendix:
+        specifier: ^10.19.57669
+        version: 10.19.57669
+
   widgets/theme-provider:
     dependencies:
       '@radix-ui/themes-radix-kit':

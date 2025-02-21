@@ -57,15 +57,11 @@
     "build": "pnpm build:js && pnpm build:ts",
     "build:js": "node scripts/esbuild-esm.js",
     "build:ts": "tsc --build --verbose",
-    "dev": "pnpm dev:js",
-    "dev:js": "node scripts/esbuild-esm.js watch=true",
-    "dev:ts": "tsc --watch --incremental --preserveWatchOutput",
     "lint": "pnpm lint:js && pnpm lint:ts",
     "lint:js": "eslint \"src/**/*.ts*\"",
     "lint:ts": "tsc --noEmit",
     "clean": "rm -rf .turbo node_modules dist tokens layout *.css",
-    "update-radix-colors": "zx scripts/update-radix-colors.mjs",
-    "dev:sass": "zx scripts/copy-sass.mjs"
+    "update-radix-colors": "zx scripts/update-radix-colors.mjs"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",

@@ -100,7 +100,7 @@ export default function (plop) {
         type: 'add',
         data,
         path: `${baseDir}/.prettierignore`,
-        template: 'tests/testProject/\n',
+        templateFile: 'templates/prettierignore.hbs',
       };
 
       const tsConfig = {

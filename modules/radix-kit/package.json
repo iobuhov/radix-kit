@@ -2,6 +2,9 @@
   "name": "radix-kit",
   "version": "0.1.0",
   "description": "Radix Kit",
+  "scripts": {
+    "dev": "echo dev"
+  },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
     "@types/fancy-log": "^2.0.2",
