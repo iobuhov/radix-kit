@@ -1,23 +1,37 @@
 import { dest, src } from 'gulp';
 import rename from 'gulp-rename';
-import { inspectFiles } from '../inspect-files.mjs';
+import { filterChanged } from './changed.mjs';
+import { inspectFiles } from './inspect-files.mjs';
+import { pipeline } from './utils.mjs';
 
-const globs = ['node_modules/*/dist/*/*.mpk', 'node_modules/*/*/dist/*/*.mpk'];
+const globs = ['node_modules/flex/dist/*/*.mpk', 'node_modules/badge/dist/*/*.mpk'];
 
-export const widgets = (options?: { projectPath: string }) => () => {
+export const widgets = (options?: { projectPath: string; watch?: boolean }) => {
+  const watch = options?.watch ?? false;
   const projectPath = options?.projectPath ?? '';
   const destPath = path.join(projectPath, 'widgets');
-  const ins = inspectFiles({ title: 'Copying widgets' });
 
-  return src(globs)
-    .pipe(ins.inspectSrc)
-    .pipe(
+  const copy = () => {
+    let stream = src(globs).pipe(
       rename({
         dirname: '',
       }),
-    )
-    .pipe(dest(destPath))
-    .pipe(ins.inspectDest);
+    );
+
+    if (watch) {
+      stream = filterChanged(stream, destPath);
+    }
+
+    const totalCopied = inspectFiles({
+      title: 'Copied widgets',
+      printPaths: true,
+      printLimit: 10,
+    });
+
+    return pipeline(stream, totalCopied.start, dest(destPath), totalCopied.end);
+  };
+
+  return copy;
 };
 
 widgets.watchGlob = globs;

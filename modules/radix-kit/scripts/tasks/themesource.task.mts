@@ -1,15 +1,34 @@
 import { dest, src } from 'gulp';
 import path from 'node:path';
-import { inspectFiles } from '../inspect-files.mjs';
+import { filterChanged } from './changed.mjs';
+import { inspectFiles } from './inspect-files.mjs';
+import { pipeline } from './utils.mjs';
 
 const glob = 'node_modules/@radix-ui/themes-radix-kit/sass/**/*.{scss,css}';
 
-export const themesource = (options?: { projectPath: string }) => () => {
+export const themesource = (options?: { projectPath: string; watch?: boolean }) => {
+  const watch = options?.watch ?? false;
+  // NOTE: all stream objects should be created within the task function
   const projectPath = options?.projectPath ?? '';
   const destPath = path.join(projectPath, 'themesource/radixkit/web');
-  const ins = inspectFiles({ title: 'Copying Radix Kit themes source files' });
 
-  return src(glob).pipe(ins.inspectSrc).pipe(dest(destPath)).pipe(ins.inspectDest);
+  const copyTheme = () => {
+    let stream = src(glob);
+
+    if (watch) {
+      stream = filterChanged(stream, destPath);
+    }
+
+    const totalCopied = inspectFiles({
+      title: 'Copied theme files:',
+      printPaths: true,
+      printLimit: watch ? 10 : Infinity,
+    });
+
+    return pipeline(stream, totalCopied.start, dest(destPath), totalCopied.end);
+  };
+
+  return copyTheme;
 };
 
 themesource.watchGlob = glob;

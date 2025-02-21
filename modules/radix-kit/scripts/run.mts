@@ -2,7 +2,7 @@
 import 'dotenv/config';
 import log from 'fancy-log';
 import * as Gulp from 'gulp';
-import { series } from 'gulp';
+import { series, watch } from 'gulp';
 import assert from 'node:assert';
 import pc from 'picocolors';
 import 'zx/globals';
@@ -24,6 +24,12 @@ async function runTask(task: Gulp.TaskFunction): Promise<void> {
 }
 
 switch (command) {
+  case undefined: {
+    log.info('Available commands:');
+    log.info('  themesource - Copy Radix Kit themes source files');
+    log.info('  widgets - Copy Mendix widgets');
+    break;
+  }
   case 'themesource': {
     await runTask(themesource({ projectPath }));
     break;
@@ -32,8 +38,17 @@ switch (command) {
     await runTask(widgets({ projectPath }));
     break;
   }
-  default:
+  case 'watch': {
+    watch(
+      themesource.watchGlob,
+      { ignoreInitial: false },
+      themesource({ projectPath, watch: true }),
+    );
+    watch(widgets.watchGlob, { ignoreInitial: false }, widgets({ projectPath, watch: true }));
+    break;
+  }
+  default: {
     log.error(pc.red(`Unknown command: ${command}`));
     process.exit(1);
-    break;
+  }
 }
