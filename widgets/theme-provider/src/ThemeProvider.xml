@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <widget
-    id="com.radixkit.widget.themeprovider.ThemeProvider"
-    pluginWidget="true"
-    needsEntityContext="true"
-    offlineCapable="true"
-    supportedPlatform="Web"
-    xmlns="http://www.mendix.com/widget/1.0/"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+  id="com.radixkit.widget.themeprovider.ThemeProvider"
+  pluginWidget="true"
+  needsEntityContext="true"
+  offlineCapable="true"
+  supportedPlatform="Web"
+  xmlns="http://www.mendix.com/widget/1.0/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
 >
-    <name>ThemeProvider</name>
-    <description>Radix theme provider for app</description>
-    <icon />
-    <properties>
-        <propertyGroup caption="General">
-            <property key="appearance" type="enumeration" defaultValue="auto">
-                <caption>Appearance</caption>
-                <description>
-                    Sets the color scheme of the theme, typically referred to as light and dark mode.
-                </description>
-                <enumerationValues>
-                    <enumerationValue key="auto">auto</enumerationValue>
-                    <enumerationValue key="dark">dark</enumerationValue>
-                    <enumerationValue key="light">light</enumerationValue>
-                    <enumerationValue key="inherit">inherit</enumerationValue>
-                </enumerationValues>
-            </property>
-            <property key="radius" type="enumeration" defaultValue="medium">
-                <caption>Radius</caption>
-                <description>Theme radius setting manages the radius factor applied to the components</description>
-                <enumerationValues>
-                    <enumerationValue key="none">none</enumerationValue>
-                    <enumerationValue key="small">small</enumerationValue>
-                    <enumerationValue key="medium">medium</enumerationValue>
-                    <enumerationValue key="large">large</enumerationValue>
-                    <enumerationValue key="full">full</enumerationValue>
-                </enumerationValues>
-            </property>
-            <property key="content" type="widgets" required="false">
-                <caption>Content</caption>
-                <description />
-            </property>
-        </propertyGroup>
-    </properties>
+  <name>ThemeProvider</name>
+  <description>Radix theme provider for app</description>
+  <icon />
+  <properties>
+    <propertyGroup caption="General">
+      <property key="appearance" type="enumeration" defaultValue="auto">
+        <caption>Appearance</caption>
+        <description>Sets the color scheme of the theme, typically referred to as light and dark mode.</description>
+        <enumerationValues>
+          <enumerationValue key="auto">auto</enumerationValue>
+          <enumerationValue key="dark">dark</enumerationValue>
+          <enumerationValue key="light">light</enumerationValue>
+          <enumerationValue key="inherit">inherit</enumerationValue>
+        </enumerationValues>
+      </property>
+      <property key="radius" type="enumeration" defaultValue="medium">
+        <caption>Radius</caption>
+        <description>Theme radius setting manages the radius factor applied to the components</description>
+        <enumerationValues>
+          <enumerationValue key="none">none</enumerationValue>
+          <enumerationValue key="small">small</enumerationValue>
+          <enumerationValue key="medium">medium</enumerationValue>
+          <enumerationValue key="large">large</enumerationValue>
+          <enumerationValue key="full">full</enumerationValue>
+        </enumerationValues>
+      </property>
+      <property key="content" type="widgets" required="false">
+        <caption>Content</caption>
+        <description />
+      </property>
+    </propertyGroup>
+  </properties>
 </widget>

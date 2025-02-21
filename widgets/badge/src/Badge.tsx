@@ -4,5 +4,5 @@ import { BadgeContainerProps } from "../typings/BadgeProps";
 import * as mapProp from "./map-prop";
 
 export function Badge(props: BadgeContainerProps): ReactElement {
-    return <RadixBadge {...mapProp.fromContainer(props)} />;
+  return <RadixBadge {...mapProp.fromContainer(props)} />;
 }
