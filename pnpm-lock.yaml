@@ -113,7 +113,41 @@ importers:
 
   packages/gen-widget: {}
 
-  packages/radix-kit-styles: {}
+  packages/radix-kit-styles:
+    dependencies:
+      '@radix-ui/colors':
+        specifier: ^3.0.0
+        version: 3.0.0
+      '@tsconfig/node22':
+        specifier: ^22.0.0
+        version: 22.0.0
+      '@types/fancy-log':
+        specifier: ^2.0.2
+        version: 2.0.2
+      '@types/gulp':
+        specifier: ^4.0.17
+        version: 4.0.17
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
+      fancy-log:
+        specifier: ^2.0.0
+        version: 2.0.0
+      gulp:
+        specifier: ^5.0.0
+        version: 5.0.0
+      picocolors:
+        specifier: ^1.1.1
+        version: 1.1.1
+      task-utils:
+        specifier: workspace:^
+        version: link:../task-utils
+      tsx:
+        specifier: ^4.19.2
+        version: 4.19.3
+      zx:
+        specifier: ^8.3.2
+        version: 8.3.2
 
   packages/task-utils:
     dependencies:
@@ -157,9 +191,6 @@ importers:
 
   packages/themes-radix-kit:
     dependencies:
-      '@radix-ui/colors':
-        specifier: ^3.0.0
-        version: 3.0.0
       '@types/react':
         specifier: ^18.2.0
         version: 18.3.18

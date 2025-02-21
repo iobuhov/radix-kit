@@ -4,9 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx scripts/watch.mts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@radix-ui/colors": "^3.0.0",
+    "@tsconfig/node22": "^22.0.0",
+    "@types/fancy-log": "^2.0.2",
+    "@types/gulp": "^4.0.17",
+    "dotenv": "^16.4.7",
+    "fancy-log": "^2.0.0",
+    "gulp": "^5.0.0",
+    "picocolors": "^1.1.1",
+    "task-utils": "workspace:^",
+    "tsx": "^4.19.2",
+    "zx": "^8.3.2"
+  }
 }

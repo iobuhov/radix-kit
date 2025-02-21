@@ -8,7 +8,10 @@ const [_, __, ...args] = process.argv;
 let [projectPath] = args;
 
 projectPath ??= path.resolve(root, 'project');
-let paths = [path.resolve(root, 'modules/radix-kit')];
+let paths = [
+  path.resolve(root, 'modules/radix-kit'),
+  path.resolve(root, 'packages/radix-kit-styles'),
+];
 
 console.log('Project path:', pc.green(projectPath));
 for (const dir of paths) {
