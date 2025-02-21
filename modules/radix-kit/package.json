@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Radix Kit",
   "scripts": {
-    "dev": "tsx scripts/run.mts watch"
+    "copy": "tsx scripts/run.mts copy"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",

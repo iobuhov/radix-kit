@@ -6,8 +6,8 @@ import { pipeline } from './utils.mjs';
 
 const glob = 'node_modules/@radix-ui/themes-radix-kit/sass/**/*.{scss,css}';
 
-export const themesource = (options?: { projectPath: string; watch?: boolean }) => {
-  const watch = options?.watch ?? false;
+export const themesource = (options?: { projectPath: string; onlyChanged?: boolean }) => {
+  const onlyChanged = options?.onlyChanged ?? false;
   // NOTE: all stream objects should be created within the task function
   const projectPath = options?.projectPath ?? '';
   const destPath = path.join(projectPath, 'themesource/radixkit/web');
@@ -15,14 +15,14 @@ export const themesource = (options?: { projectPath: string; watch?: boolean }) 
   const copyTheme = () => {
     let stream = src(glob);
 
-    if (watch) {
+    if (onlyChanged) {
       stream = filterChanged(stream, destPath);
     }
 
     const totalCopied = inspectFiles({
       title: 'Copied theme files:',
       printPaths: true,
-      printLimit: watch ? 10 : Infinity,
+      printLimit: onlyChanged ? 10 : Infinity,
     });
 
     return pipeline(stream, totalCopied.start, dest(destPath), totalCopied.end);

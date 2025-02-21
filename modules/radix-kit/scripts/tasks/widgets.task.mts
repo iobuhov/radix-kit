@@ -6,8 +6,8 @@ import { pipeline } from './utils.mjs';
 
 const globs = ['node_modules/flex/dist/*/*.mpk', 'node_modules/badge/dist/*/*.mpk'];
 
-export const widgets = (options?: { projectPath: string; watch?: boolean }) => {
-  const watch = options?.watch ?? false;
+export const widgets = (options?: { projectPath: string; onlyChanged?: boolean }) => {
+  const onlyChanged = options?.onlyChanged ?? false;
   const projectPath = options?.projectPath ?? '';
   const destPath = path.join(projectPath, 'widgets');
 
@@ -18,7 +18,7 @@ export const widgets = (options?: { projectPath: string; watch?: boolean }) => {
       }),
     );
 
-    if (watch) {
+    if (onlyChanged) {
       stream = filterChanged(stream, destPath);
     }
 

@@ -3,6 +3,10 @@
   "ui": "tui",
 
   "tasks": {
+    "copy": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "dependsOn": ["^build"],
@@ -15,9 +19,7 @@
     "lint": {},
     "dev": {
       "cache": false,
-      "persistent": true,
-      "dependsOn": ["^build"],
-      "interruptible": true
+      "persistent": true
     },
     "clean": {
       "cache": false

@@ -32,14 +32,34 @@ const commands = {
     log.info('Project path:', pc.green(projectPath));
     await runTask(widgets({ projectPath }));
   },
+  async copy() {
+    const projectPath = getProjectPath();
+    log.info('Project path:', pc.green(projectPath));
+    await runTask(
+      series(
+        themesource({ projectPath, onlyChanged: true }),
+        widgets({ projectPath, onlyChanged: true }),
+      ),
+    );
+  },
+  // NOTE: Don't use watch. It's going to be replaced with `turbo watch`.
   async watch() {
     const projectPath = getProjectPath();
     watch(
       themesource.watchGlob,
       { ignoreInitial: false },
-      themesource({ projectPath, watch: true }),
+      themesource({ projectPath, onlyChanged: true }),
     );
-    watch(widgets.watchGlob, { ignoreInitial: false }, widgets({ projectPath, watch: true }));
+    watch(widgets.watchGlob, { ignoreInitial: false }, widgets({ projectPath, onlyChanged: true }));
+  },
+
+  'watch:sass': async () => {
+    const projectPath = getProjectPath();
+    watch(
+      themesource.watchGlob,
+      { ignoreInitial: false },
+      themesource({ projectPath, onlyChanged: true }),
+    );
   },
 };
 
