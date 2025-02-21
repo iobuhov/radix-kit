@@ -1,8 +1,8 @@
 import { dest, src } from 'gulp';
 import rename from 'gulp-rename';
-import { filterChanged } from './changed.mjs';
-import { inspectFiles } from './inspect-files.mjs';
-import { pipeline } from './utils.mjs';
+import { filterChanged } from 'task-utils/changed.mjs';
+import { inspectFiles } from 'task-utils/inspect-files.mjs';
+import { pipeline } from 'task-utils/utils.mjs';
 
 const globs = ['node_modules/flex/dist/*/*.mpk', 'node_modules/badge/dist/*/*.mpk'];
 

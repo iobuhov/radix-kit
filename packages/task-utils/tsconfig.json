@@ -1,0 +1,8 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "include": ["./*.mts"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true
+  }
+}

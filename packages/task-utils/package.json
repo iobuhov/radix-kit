@@ -1,0 +1,38 @@
+{
+  "name": "task-utils",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    "./*.mjs": "./dist/*.mjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc --build --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/fancy-log": "^2.0.2",
+    "easy-transform-stream": "^1.0.1",
+    "fancy-log": "^2.0.0",
+    "picocolors": "^1.1.1",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@types/gulp-changed": "^0.0.39",
+    "@types/vinyl": "^2.0.12",
+    "@types/vinyl-paths": "^5.0.0",
+    "gulp-changed": "^5.0.2",
+    "tsup": "^8.3.6",
+    "vinyl-paths": "^5.0.0"
+  }
+}

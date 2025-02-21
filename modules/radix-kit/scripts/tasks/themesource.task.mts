@@ -1,8 +1,8 @@
 import { dest, src } from 'gulp';
 import path from 'node:path';
-import { filterChanged } from './changed.mjs';
-import { inspectFiles } from './inspect-files.mjs';
-import { pipeline } from './utils.mjs';
+import { filterChanged } from 'task-utils/changed.mjs';
+import { inspectFiles } from 'task-utils/inspect-files.mjs';
+import { pipeline } from 'task-utils/utils.mjs';
 
 const glob = 'node_modules/@radix-ui/themes-radix-kit/sass/**/*.{scss,css}';
 
