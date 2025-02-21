@@ -43,21 +43,26 @@ const commands = {
   },
 };
 
-const [_, __, ...args] = process.argv;
-const [command] = args;
+async function main() {
+  const [_, __, ...args] = process.argv;
+  const [command] = args;
 
-if (command === undefined) {
-  console.info('Available commands:');
-  console.info('  themesource - Copy Radix Kit themes source files');
-  console.info('  widgets - Copy Mendix widgets');
-  console.info('  watch - Watch for changes in themes source and Mendix widgets');
-  process.exit(0);
-}
+  if (command === undefined) {
+    console.info('Available commands:');
+    console.info('  themesource - Copy Radix Kit themes source files');
+    console.info('  widgets - Copy Mendix widgets');
+    console.info('  watch - Watch for changes in themes source and Mendix widgets');
+    return;
+  }
 
-if (commands.hasOwnProperty(command)) {
+  if (!commands.hasOwnProperty(command)) {
+    throw new Error(`Unknown command: ${command}`);
+  }
+
   await commands[command as keyof typeof commands]();
-  process.exit(0);
 }
 
-console.error(pc.red(`Unknown command: ${command}`));
-process.exit(1);
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
