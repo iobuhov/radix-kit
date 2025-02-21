@@ -8,7 +8,7 @@
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules .turbo",
     "set-project": "pnpm tsx scripts/set-project.mts",
-    "dev:setup": "pnpm install && pnpm set-project",
+    "dev:setup": "pnpm set-project",
     "gen": "turbo gen"
   },
   "devDependencies": {
@@ -24,6 +24,9 @@
     "typescript": "^5.7.2"
   },
   "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ],
     "overrides": {
       "prettier": "^3.4.2",
       "@types/react-dom": "^18.2.0",
