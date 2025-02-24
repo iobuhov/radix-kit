@@ -14,6 +14,7 @@
   "scripts": {
     "start:web": "pluggable-widgets-tools start:web",
     "build": "pluggable-widgets-tools build:web",
+    "build:dev": "pnpm build",
     "lint": "pluggable-widgets-tools lint",
     "test": "pluggable-widgets-tools test:unit:web --no-cache --ci",
     "test:unit": "pluggable-widgets-tools test:unit:web --coverage",

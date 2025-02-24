@@ -3,14 +3,14 @@
   "ui": "tui",
 
   "tasks": {
-    "copy": {
-      "cache": false,
-      "dependsOn": ["^build"]
-    },
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
+    },
+    "build:dev": {
+      "dependsOn": ["^build"],
+      "cache": false
     },
     "test": {
       "outputs": ["coverage/**"],

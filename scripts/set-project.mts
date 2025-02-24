@@ -6,11 +6,15 @@ import 'zx/globals';
 const root = (await $`git rev-parse --show-toplevel`).stdout.trim();
 const [_, __, ...args] = process.argv;
 let [projectPath] = args;
-
 projectPath ??= path.resolve(root, 'project');
+
+const widgetsList = await $`pnpm ls --depth=-1 --json --filter="{widgets/**}"`;
+const widgetPaths = JSON.parse(widgetsList.stdout).map((pkg: { path: string }) => pkg.path);
+
 let paths = [
   path.resolve(root, 'modules/radix-kit'),
-  path.resolve(root, 'packages/radix-kit-styles'),
+  path.resolve(root, 'packages/radix-ui-styles'),
+  ...widgetPaths,
 ];
 
 console.log('Project path:', pc.green(projectPath));
