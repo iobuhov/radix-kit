@@ -1,5 +1,5 @@
 import { ReactElement, createElement } from "react";
-import { Badge as RadixBadge } from "radix-ui/components/Badge";
+import { Badge as RadixBadge } from "radix-ui-themes/components/Badge";
 import { BadgeContainerProps } from "../typings/BadgeProps";
 import * as mapProp from "./map-prop";
 

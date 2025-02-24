@@ -1,4 +1,4 @@
-import { BadgeProps } from "radix-ui/components/Badge";
+import { BadgeProps } from "radix-ui-themes/components/Badge";
 import { BadgeContainerProps, BadgePreviewProps } from "../typings/BadgeProps";
 
 interface CommonProps {

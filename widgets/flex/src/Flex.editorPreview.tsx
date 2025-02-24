@@ -1,6 +1,6 @@
 import { ReactElement, createElement } from "react";
 import { FlexPreviewProps } from "../typings/FlexProps";
-import { Flex as RadixFlex } from "radix-ui/components/flex";
+import { Flex as RadixFlex } from "radix-ui-themes/components/flex";
 
 export function preview(props: FlexPreviewProps): ReactElement {
   return (

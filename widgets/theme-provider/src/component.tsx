@@ -1,5 +1,5 @@
 import { createElement, useEffect, useState } from "react";
-import { ThemeProps, Theme as RadixTheme } from "radix-ui/components/theme";
+import { ThemeProps, Theme as RadixTheme } from "radix-ui-themes/components/theme";
 
 type Appearance = "dark" | "light" | "inherit";
 interface Props extends Omit<ThemeProps, "appearance"> {
