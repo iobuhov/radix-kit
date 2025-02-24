@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Radix Kit",
   "scripts": {
-    "copy": "tsx scripts/run.mts copy"
+    "m:build": "echo TODO: implement module build"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
