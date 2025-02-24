@@ -21,7 +21,7 @@
     "release": "pluggable-widgets-tools release:web"
   },
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^10.15.0",
+    "@mendix/pluggable-widgets-tools": "^10.18.0",
     "@prettier/plugin-xml": "^3.4.1",
     "@types/big.js": "^6.0.2",
     "mendix": "^10.19.57669"
