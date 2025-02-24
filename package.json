@@ -4,7 +4,7 @@
   "packageManager": "pnpm@10.0.0",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo watch styles#dev build --concurrency=8",
+    "dev": "turbo watch radix-ui-styles#dev build --concurrency=8",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules .turbo",
     "set-project": "pnpm tsx scripts/set-project.mts",

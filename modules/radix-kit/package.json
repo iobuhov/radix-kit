@@ -19,7 +19,7 @@
     "zx": "^8.3.2"
   },
   "dependencies": {
-    "@radix-ui/themes-radix-kit": "workspace:^",
+    "radix-ui": "workspace:^",
     "badge": "workspace:^",
     "flex": "workspace:^",
     "task-utils": "workspace:^"

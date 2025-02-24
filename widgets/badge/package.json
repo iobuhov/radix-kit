@@ -27,7 +27,7 @@
     "mendix": "^10.19.57669"
   },
   "dependencies": {
-    "@radix-ui/themes-radix-kit": "workspace:^",
+    "radix-ui": "workspace:^",
     "classnames": "^2.2.6"
   }
 }

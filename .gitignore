@@ -16,6 +16,7 @@ packages/radix-ui-themes/layout
 modules/radix-kit/project
 *.bak
 *.launch
+*.tsbuildinfo
 mxproject
 coverage
 
