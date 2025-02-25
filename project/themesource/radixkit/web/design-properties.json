@@ -68,7 +68,6 @@
         }
       ]
     },
-
     {
       "name": "Laptop size",
       "type": "ToggleButtonGroup",
@@ -88,7 +87,6 @@
         }
       ]
     },
-
     {
       "name": "Phone size (portrait)",
       "type": "Dropdown",
@@ -108,7 +106,6 @@
         }
       ]
     },
-
     {
       "name": "Size",
       "type": "ToggleButtonGroup",

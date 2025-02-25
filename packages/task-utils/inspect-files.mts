@@ -1,7 +1,7 @@
-import log from 'fancy-log';
-import path from 'node:path';
-import pc from 'picocolors';
-import vinylPaths from 'vinyl-paths';
+import log from "fancy-log";
+import path from "node:path";
+import pc from "picocolors";
+import vinylPaths from "vinyl-paths";
 
 interface Options {
   title?: string;
@@ -16,22 +16,19 @@ export function inspectFiles(options: Options = {}) {
   let src = vinylPaths();
   let dest = vinylPaths();
 
-  dest.on('end', () => {
+  dest.on("end", () => {
     const [srcPaths, destPaths] = [src.paths, dest.paths];
 
     if (options.title) {
-      log.info('==>', pc.bold(options.title));
+      log.info("==>", pc.bold(options.title));
     }
 
     if (printPaths) {
       if (srcPaths.length > printLimit) {
-        log.info('...');
+        log.info("...");
       }
-      const pairs = srcPaths.slice(-printLimit).map((srcPath) => {
-        return [
-          srcPath,
-          destPaths.find((filepath) => path.parse(filepath).base === path.parse(srcPath).base),
-        ] as const;
+      const pairs = srcPaths.slice(printLimit === 0 ? srcPaths.length : -printLimit).map((srcPath) => {
+        return [srcPath, destPaths.find((filepath) => path.parse(filepath).base === path.parse(srcPath).base)] as const;
       });
 
       pairs.forEach(([srcPath, destPath]) => {
@@ -45,8 +42,7 @@ export function inspectFiles(options: Options = {}) {
     }
 
     const total =
-      options.formatTotal?.(srcPaths.length, destPaths.length) ??
-      `==> Total files: ${pc.green(srcPaths.length)}`;
+      options.formatTotal?.(srcPaths.length, destPaths.length) ?? `==> Total files: ${pc.green(srcPaths.length)}`;
 
     log.info(total);
   });

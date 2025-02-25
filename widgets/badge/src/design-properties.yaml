@@ -1,0 +1,45 @@
+%YAML 1.2
+---
+com.radixkit.widget.badge.Badge:
+  - name: Variant
+    type: ToggleButtonGroup
+    description: The visual variant of the badge
+    options:
+      - name: solid
+        class: rt-variant-solid
+      - name: soft
+        class: rt-variant-soft
+      - name: surface
+        class: rt-variant-surface
+      - name: outline
+        class: rt-variant-outline
+  - name: Laptop size
+    type: ToggleButtonGroup
+    description: Size on laptop
+    options:
+      - name: "1"
+        class: lg:rt-r-size-1
+      - name: "2"
+        class: lg:rt-r-size-2
+      - name: "3"
+        class: lg:rt-r-size-3
+  - name: Phone size (portrait)
+    type: Dropdown
+    description: Size on phone (portrait)
+    options:
+      - name: "1"
+        class: xs:rt-r-size-1
+      - name: "2"
+        class: xs:rt-r-size-2
+      - name: "3"
+        class: xs:rt-r-size-3
+  - name: Size
+    type: ToggleButtonGroup
+    description: Badge size
+    options:
+      - name: 1 (default)
+        class: rt-r-size-1
+      - name: "2"
+        class: rt-r-size-2
+      - name: "3"
+        class: rt-r-size-3

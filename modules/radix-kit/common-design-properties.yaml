@@ -1,0 +1,25 @@
+%YAML 1.2
+---
+Widget:
+  - name: Gap
+    type: ToggleButtonGroup
+    description: Gap between the items on desktop
+    options:
+      - name: "1"
+        class: rt-r-gap-1
+      - name: "2"
+        class: rt-r-gap-2
+      - name: "3"
+        class: rt-r-gap-3
+      - name: "4"
+        class: rt-r-gap-4
+      - name: "5"
+        class: rt-r-gap-5
+      - name: "6"
+        class: rt-r-gap-6
+      - name: "7"
+        class: rt-r-gap-7
+      - name: "8"
+        class: rt-r-gap-8
+      - name: "9"
+        class: rt-r-gap-9
