@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A CLI tool for fast widget scaffolding using Plop.js",
   "type": "module",
-  "dependencies": {},
+  "dependencies": {
+    "zx": "^8.3.2"
+  },
   "keywords": [
     "plop",
     "cli",

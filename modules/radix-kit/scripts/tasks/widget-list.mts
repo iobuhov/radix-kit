@@ -1,9 +1,1 @@
-const widgets = `
-  flex,
-  badge
-`;
-
-export const list = widgets
-  .split(",\n")
-  .filter(Boolean)
-  .map((item) => item.trim());
+export const list = ["badge", "flex", "theme-provider"];

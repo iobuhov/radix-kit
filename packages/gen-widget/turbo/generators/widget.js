@@ -1,10 +1,12 @@
-import { spawnSync } from 'node:child_process';
-import path from 'node:path';
+import { spawnSync } from "node:child_process";
+import { type } from "node:os";
+import path from "node:path";
+import { $ } from "zx";
 
 const extendData = (data, plop) => {
   const { name } = data;
-  const pascalCase = plop.getHelper('pascalCase');
-  const dashCase = plop.getHelper('dashCase');
+  const pascalCase = plop.getHelper("pascalCase");
+  const dashCase = plop.getHelper("dashCase");
   const lowerCaseName = name.toLowerCase();
   const widgetName = pascalCase(name);
   const packageName = dashCase(name);
@@ -20,107 +22,122 @@ const extendData = (data, plop) => {
 };
 
 export default function (plop) {
-  plop.setActionType('install', (data) => {
-    const baseDir = path.join(data.turbo.paths.root, 'widgets', data.packageName);
-    spawnSync(`cd ${baseDir} && pnpm install && pnpm build`, [], {
-      stdio: 'inherit',
+  plop.setActionType("install", (data) => {
+    const baseDir = path.join(data.turbo.paths.root, "widgets", data.packageName);
+    spawnSync(`cd ${baseDir} && pnpm install && pnpm w:build`, [], {
+      stdio: "inherit",
       shell: true,
     });
   });
 
-  plop.setGenerator('widget', {
-    description: 'Create a new widget',
+  plop.setActionType("inject-widget-list", async (data) => {
+    const { stdout } = await $`pnpm ls --depth=-1 --json --filter="{widgets/**}"`;
+    const widgetList = JSON.parse(stdout).map((pkg) => pkg.name);
+    data.widgetList = widgetList;
+    console.log(data.widgetList);
+  });
+
+  plop.setGenerator("widget", {
+    description: "Create a new widget",
     prompts: [
       {
-        type: 'input',
-        name: 'name',
-        message: 'Widget name?',
+        type: "input",
+        name: "name",
+        message: "Widget name?",
       },
       {
-        type: 'input',
-        name: 'description',
-        message: 'Widget description?',
+        type: "input",
+        name: "description",
+        message: "Widget description?",
       },
     ],
     actions: function (data) {
       data = extendData(data, plop);
 
-      const baseDir = '{{turbo.paths.root}}/widgets/{{packageName}}';
+      const baseDir = "{{turbo.paths.root}}/widgets/{{packageName}}";
 
       const editorConfig = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/src/{{widgetName}}.editorConfig.ts`,
-        templateFile: 'templates/editor-config.hbs',
+        templateFile: "templates/editor-config.hbs",
       };
 
       const editorPreview = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/src/{{widgetName}}.editorPreview.tsx`,
-        templateFile: 'templates/editor-preview.hbs',
+        templateFile: "templates/editor-preview.hbs",
       };
 
       const editorTypes = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/typings/editor-types.d.ts`,
-        templateFile: 'templates/editor-types.hbs',
+        templateFile: "templates/editor-types.hbs",
       };
 
       const eslintrc = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/.eslintrc.js`,
-        templateFile: 'templates/eslintrc.hbs',
+        templateFile: "templates/eslintrc.hbs",
       };
 
       const packageJson = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/package.json`,
-        templateFile: 'templates/package.json.hbs',
+        templateFile: "templates/package.json.hbs",
       };
 
       const packageXML = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/src/package.xml`,
-        templateFile: 'templates/package.xml.hbs',
+        templateFile: "templates/package.xml.hbs",
       };
 
       const prettierConfig = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/prettier.config.js`,
-        templateFile: 'templates/prettier.config.hbs',
+        templateFile: "templates/prettier.config.hbs",
       };
 
       const prettierIgnore = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/.prettierignore`,
-        templateFile: 'templates/prettierignore.hbs',
+        templateFile: "templates/prettierignore.hbs",
       };
 
       const tsConfig = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/tsconfig.json`,
-        templateFile: 'templates/tsconfig.json.hbs',
+        templateFile: "templates/tsconfig.json.hbs",
       };
       const widget = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/src/{{widgetName}}.tsx`,
-        templateFile: 'templates/widget.hbs',
+        templateFile: "templates/widget.hbs",
       };
 
       const widgetXML = {
-        type: 'add',
+        type: "add",
         data,
         path: `${baseDir}/src/{{widgetName}}.xml`,
-        templateFile: 'templates/widget.xml.hbs',
+        templateFile: "templates/widget.xml.hbs",
+      };
+
+      const modifyWidgetList = {
+        type: "add",
+        force: true,
+        data,
+        path: "{{turbo.paths.root}}/modules/radix-kit/scripts/tasks/widget-list.mts",
+        templateFile: "templates/widget-list.mts.hbs",
       };
 
       return [
@@ -135,7 +152,9 @@ export default function (plop) {
         tsConfig,
         widget,
         widgetXML,
-        { type: 'install', data },
+        { type: "install", data },
+        { type: "inject-widget-list", data },
+        modifyWidgetList,
       ];
     },
   });
