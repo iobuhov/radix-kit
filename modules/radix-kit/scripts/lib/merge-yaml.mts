@@ -20,7 +20,9 @@ class ReduceYamlToJsonStream extends Transform {
         return;
       }
       const fileData = yaml.parse(file.contents!.toString("utf-8"));
-      this.data = { ...this.data, ...fileData };
+      if (fileData) {
+        this.data = { ...this.data, ...fileData };
+      }
       callback();
     } catch (error) {
       callback(error as Error);

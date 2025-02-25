@@ -158,6 +158,13 @@ export default function widgetGenerator(plop) {
         templateFile: "templates/widget-list.mts.hbs",
       };
 
+      const designProps = {
+        type: "add",
+        data,
+        path: `${baseDir}/src/design-properties.yaml`,
+        templateFile: "templates/design-properties.yaml.hbs",
+      };
+
       return [
         editorConfig,
         editorPreview,
@@ -170,6 +177,7 @@ export default function widgetGenerator(plop) {
         tsConfig,
         widget,
         widgetXML,
+        designProps,
         { type: "install", data },
         { type: "inject-widget-list", data },
         modifyWidgetList,
