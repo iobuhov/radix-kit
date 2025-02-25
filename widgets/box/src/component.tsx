@@ -6,6 +6,7 @@ import { respProps, ResponsiveProp } from "./resp-props";
 import { ZodError, ZodIssue } from "zod";
 
 export function UIBox(props: {
+  class?: string;
   responsiveProps: ResponsiveProp<NameEnum>[];
   children?: React.ReactNode;
 }): ReactElement {
@@ -24,7 +25,11 @@ export function UIBox(props: {
     );
   }
 
-  return <Box {...layoutPropsResult.data}>{children}</Box>;
+  return (
+    <Box {...layoutPropsResult.data} className={props.class}>
+      {children}
+    </Box>
+  );
 }
 
 function IssueList({ error }: { error: ZodError }): React.ReactNode {

@@ -1,10 +1,11 @@
-@forward 'global';
+@forward "global";
+@forward "mendix";
 
-@forward 'tokens/index';
-@forward 'components/index';
-@forward 'utilities/index';
+@forward "tokens/index";
+@forward "components/index";
+@forward "utilities/index";
 
-.radix-themes:where([data-is-root-theme='true']) {
+.radix-themes:where([data-is-root-theme="true"]) {
   /* Create a new stacking context on the root `Theme` so layered components work out of the box */
   position: relative;
   z-index: 13;
