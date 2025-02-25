@@ -15,9 +15,86 @@
   <icon />
   <properties>
     <propertyGroup caption="General">
-      <property key="text" type="string" required="false">
-        <caption>Text</caption>
+      <property key="children" type="widgets" required="false">
+        <caption>Children</caption>
         <description />
+      </property>
+      <property key="responsiveProps" type="object" isList="true" required="false">
+        <caption>Responsive</caption>
+        <description>Responsive properties</description>
+        <properties>
+          <propertyGroup caption="General">
+            <property key="name" type="enumeration" defaultValue="m">
+              <caption>Property name</caption>
+              <description />
+              <enumerationValues>
+                <enumerationValue key="m">m (margin)</enumerationValue>
+                <enumerationValue key="mx">mx (margin left-right)</enumerationValue>
+                <enumerationValue key="my">my (margin top-bottom)</enumerationValue>
+                <enumerationValue key="mt">mt (margin top)</enumerationValue>
+                <enumerationValue key="mr">mr (margin right)</enumerationValue>
+                <enumerationValue key="mb">mb (margin bottom)</enumerationValue>
+                <enumerationValue key="ml">ml (margin left)</enumerationValue>
+                <enumerationValue key="p">p (padding)</enumerationValue>
+                <enumerationValue key="px">px (padding left-right)</enumerationValue>
+                <enumerationValue key="py">py (padding top-bottom)</enumerationValue>
+                <enumerationValue key="pt">pt (padding right)</enumerationValue>
+                <enumerationValue key="pr">pr (padding right)</enumerationValue>
+                <enumerationValue key="pb">pb (padding bottom)</enumerationValue>
+                <enumerationValue key="pl">pl (padding left)</enumerationValue>
+                <enumerationValue key="width">width</enumerationValue>
+                <enumerationValue key="minWidth">minWidth</enumerationValue>
+                <enumerationValue key="maxWidth">maxWidth</enumerationValue>
+                <enumerationValue key="height">height</enumerationValue>
+                <enumerationValue key="minHeight">minHeight</enumerationValue>
+                <enumerationValue key="maxHeight">maxHeight</enumerationValue>
+                <enumerationValue key="position">position</enumerationValue>
+                <enumerationValue key="inset">inset</enumerationValue>
+                <enumerationValue key="top">top</enumerationValue>
+                <enumerationValue key="right">right</enumerationValue>
+                <enumerationValue key="bottom">bottom</enumerationValue>
+                <enumerationValue key="left">left</enumerationValue>
+                <enumerationValue key="overflow">overflow</enumerationValue>
+                <enumerationValue key="overflowX">overflowX</enumerationValue>
+                <enumerationValue key="overflowY">overflowY</enumerationValue>
+                <enumerationValue key="flexBasis">flexBasis</enumerationValue>
+                <enumerationValue key="flexShrink">flexShrink</enumerationValue>
+                <enumerationValue key="flexGrow">flexGrow</enumerationValue>
+                <enumerationValue key="gridArea">gridArea</enumerationValue>
+                <enumerationValue key="gridColumn">gridColumn</enumerationValue>
+                <enumerationValue key="gridColumnStart">gridColumnStart</enumerationValue>
+                <enumerationValue key="gridColumnEnd">gridColumnEnd</enumerationValue>
+                <enumerationValue key="gridRow">gridRow</enumerationValue>
+                <enumerationValue key="gridRowStart">gridRowStart</enumerationValue>
+                <enumerationValue key="gridRowEnd">gridRowEnd</enumerationValue>
+              </enumerationValues>
+            </property>
+            <property key="initial" type="string" required="false">
+              <caption>initial</caption>
+              <description>Phones (portrait)</description>
+            </property>
+            <property key="xs" type="string" required="false">
+              <caption>xs</caption>
+              <description>Phones (landscape)</description>
+            </property>
+            <property key="sm" type="string" required="false">
+              <caption>sm</caption>
+              <description>Tablets (portrait)</description>
+            </property>
+            <property key="md" type="string" required="false">
+              <caption>md</caption>
+              <description>Tablets (landscape)</description>
+            </property>
+            <property key="lg" type="string" required="false">
+              <caption>lg</caption>
+              <description>Laptops</description>
+            </property>
+            <property key="xl" type="string" required="false">
+              <caption>xl</caption>
+              <description>Desktop</description>
+            </property>
+          </propertyGroup>
+        </properties>
       </property>
     </propertyGroup>
   </properties>
