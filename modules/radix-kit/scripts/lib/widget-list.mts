@@ -1,1 +1,1 @@
-export const list = ["allinone", "badge", "flex", "fotobox", "theme-provider", "visync"];
+export const list = ["badge", "box", "flex", "theme-provider"];

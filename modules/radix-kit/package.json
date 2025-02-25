@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "badge": "workspace:^",
+    "box": "workspace:^",
     "flex": "workspace:^",
     "radix-ui-styles": "workspace:^",
     "radix-ui-themes": "workspace:^",
