@@ -25,7 +25,9 @@
   "dependencies": {
     "badge": "workspace:^",
     "flex": "workspace:^",
+    "radix-ui-styles": "workspace:^",
     "radix-ui-themes": "workspace:^",
-    "task-utils": "workspace:^"
+    "task-utils": "workspace:^",
+    "theme-provider": "workspace:^"
   }
 }

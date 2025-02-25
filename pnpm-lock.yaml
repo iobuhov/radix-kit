@@ -70,12 +70,18 @@ importers:
       flex:
         specifier: workspace:^
         version: link:../../widgets/flex
+      radix-ui-styles:
+        specifier: workspace:^
+        version: link:../../packages/radix-ui-styles
       radix-ui-themes:
         specifier: workspace:^
         version: link:../../packages/radix-ui-themes
       task-utils:
         specifier: workspace:^
         version: link:../../packages/task-utils
+      theme-provider:
+        specifier: workspace:^
+        version: link:../../widgets/theme-provider
     devDependencies:
       '@tsconfig/node22':
         specifier: ^22.0.0

@@ -2,8 +2,8 @@ import { dest, src } from "gulp";
 import path from "node:path";
 import { inspectFiles } from "task-utils/inspect-files.mjs";
 import { pipeline } from "task-utils/utils.mjs";
-import { mergeYaml } from "./merge-yaml.mjs";
-import { list as widgets } from "./widget-list.mjs";
+import { mergeYaml } from "../lib/merge-yaml.mjs";
+import { list as widgets } from "../lib/widget-list.mjs";
 
 const glob = [
   "common-design-properties.yaml",
