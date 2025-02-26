@@ -9,7 +9,3 @@ com.radixkit.widget.box.Box:
         class: rt-r-display-inline
       - name: inline-block
         class: rt-r-display-inline-block
-      - name: flex
-        class: rt-r-display-flex
-      - name: inline-flex
-        class: rt-r-display-inline-flex

@@ -1,25 +1,98 @@
 %YAML 1.2
 ---
 Widget:
-  - name: Gap
-    type: ToggleButtonGroup
-    description: Gap between the items on desktop
-    options:
+  - name: Spacing
+    type: Spacing
+    description: Padding and margin
+    margin:
       - name: "1"
-        class: rt-r-gap-1
+        top: { class: rt-r-mt-1 }
+        right: { class: rt-r-mr-1 }
+        bottom: { class: rt-r-mb-1 }
+        left: { class: rt-r-ml-1 }
       - name: "2"
-        class: rt-r-gap-2
+        top: { class: rt-r-mt-2 }
+        right: { class: rt-r-mr-2 }
+        bottom: { class: rt-r-mb-2 }
+        left: { class: rt-r-ml-2 }
       - name: "3"
-        class: rt-r-gap-3
+        top: { class: rt-r-mt-3 }
+        right: { class: rt-r-mr-3 }
+        bottom: { class: rt-r-mb-3 }
+        left: { class: rt-r-ml-3 }
       - name: "4"
-        class: rt-r-gap-4
+        top: { class: rt-r-mt-4 }
+        right: { class: rt-r-mr-4 }
+        bottom: { class: rt-r-mb-4 }
+        left: { class: rt-r-ml-4 }
       - name: "5"
-        class: rt-r-gap-5
+        top: { class: rt-r-mt-5 }
+        right: { class: rt-r-mr-5 }
+        bottom: { class: rt-r-mb-5 }
+        left: { class: rt-r-ml-5 }
       - name: "6"
-        class: rt-r-gap-6
+        top: { class: rt-r-mt-6 }
+        right: { class: rt-r-mr-6 }
+        bottom: { class: rt-r-mb-6 }
+        left: { class: rt-r-ml-6 }
       - name: "7"
-        class: rt-r-gap-7
+        top: { class: rt-r-mt-7 }
+        right: { class: rt-r-mr-7 }
+        bottom: { class: rt-r-mb-7 }
+        left: { class: rt-r-ml-7 }
       - name: "8"
-        class: rt-r-gap-8
+        top: { class: rt-r-mt-8 }
+        right: { class: rt-r-mr-8 }
+        bottom: { class: rt-r-mb-8 }
+        left: { class: rt-r-ml-8 }
       - name: "9"
-        class: rt-r-gap-9
+        top: { class: rt-r-mt-9 }
+        right: { class: rt-r-mr-9 }
+        bottom: { class: rt-r-mb-9 }
+        left: { class: rt-r-ml-9 }
+    padding:
+      - name: "1"
+        top: { class: rt-r-pt-1 }
+        right: { class: rt-r-pr-1 }
+        bottom: { class: rt-r-pb-1 }
+        left: { class: rt-r-pl-1 }
+      - name: "2"
+        top: { class: rt-r-pt-2 }
+        right: { class: rt-r-pr-2 }
+        bottom: { class: rt-r-pb-2 }
+        left: { class: rt-r-pl-2 }
+      - name: "3"
+        top: { class: rt-r-pt-3 }
+        right: { class: rt-r-pr-3 }
+        bottom: { class: rt-r-pb-3 }
+        left: { class: rt-r-pl-3 }
+      - name: "4"
+        top: { class: rt-r-pt-4 }
+        right: { class: rt-r-pr-4 }
+        bottom: { class: rt-r-pb-4 }
+        left: { class: rt-r-pl-4 }
+      - name: "5"
+        top: { class: rt-r-pt-5 }
+        right: { class: rt-r-pr-5 }
+        bottom: { class: rt-r-pb-5 }
+        left: { class: rt-r-pl-5 }
+      - name: "6"
+        top: { class: rt-r-pt-6 }
+        right: { class: rt-r-pr-6 }
+        bottom: { class: rt-r-pb-6 }
+        left: { class: rt-r-pl-6 }
+      - name: "7"
+        top: { class: rt-r-pt-7 }
+        right: { class: rt-r-pr-7 }
+        bottom: { class: rt-r-pb-7 }
+        left: { class: rt-r-pl-7 }
+      - name: "8"
+        top: { class: rt-r-pt-8 }
+        right: { class: rt-r-pr-8 }
+        bottom: { class: rt-r-pb-8 }
+        left: { class: rt-r-pl-8 }
+      - name: "9"
+        top: { class: rt-r-pt-9 }
+        right: { class: rt-r-pr-9 }
+        bottom: { class: rt-r-pb-9 }
+        left: { class: rt-r-pl-9 }
