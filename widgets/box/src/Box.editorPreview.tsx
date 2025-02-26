@@ -1,13 +1,10 @@
 import { ReactElement, createElement } from "react";
 import { BoxPreviewProps } from "../typings/BoxProps";
 import { UIBox } from "./component";
+import { DropZone } from "radix-ui-themes/preview/dropzone";
 
 export function preview(props: BoxPreviewProps): ReactElement {
-  const children = (
-    <props.children.renderer>
-      <div style={{ display: "contents" }} />
-    </props.children.renderer>
-  );
+  const children = <DropZone {...props} prop="children" />;
 
   return <UIBox {...props} children={children} />;
 }
