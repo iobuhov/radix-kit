@@ -1,18 +1,17 @@
 import { ReactElement, createElement, useMemo, Fragment } from "react";
 import { Box } from "radix-ui-themes/components/box";
 import { layoutPropsSchema } from "radix-ui-themes/validation/layout-props.validation";
-import { NameEnum } from "../typings/BoxProps";
-import { respProps, ResponsiveProp } from "./resp-props";
+import { reduceRespProps, ResponsiveProp } from "radix-ui-themes/helpers/resp-props";
 import { ZodError, ZodIssue } from "zod";
 
 export function UIBox(props: {
   class?: string;
-  responsiveProps: ResponsiveProp<NameEnum>[];
+  responsiveProps: ResponsiveProp[];
   children?: React.ReactNode;
 }): ReactElement {
   const { children } = props;
   const layoutPropsResult = useMemo(
-    () => layoutPropsSchema.safeParse(respProps(props.responsiveProps)),
+    () => layoutPropsSchema.safeParse(reduceRespProps(props.responsiveProps)),
     [props.responsiveProps]
   );
 
