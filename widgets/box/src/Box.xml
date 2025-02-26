@@ -38,7 +38,7 @@
                 <enumerationValue key="p">p (padding)</enumerationValue>
                 <enumerationValue key="px">px (padding left-right)</enumerationValue>
                 <enumerationValue key="py">py (padding top-bottom)</enumerationValue>
-                <enumerationValue key="pt">pt (padding right)</enumerationValue>
+                <enumerationValue key="pt">pt (padding top)</enumerationValue>
                 <enumerationValue key="pr">pr (padding right)</enumerationValue>
                 <enumerationValue key="pb">pb (padding bottom)</enumerationValue>
                 <enumerationValue key="pl">pl (padding left)</enumerationValue>
