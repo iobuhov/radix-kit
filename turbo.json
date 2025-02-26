@@ -20,6 +20,11 @@
       "dependsOn": ["^w:build"],
       "cache": false
     },
+    "__null_task__": {},
+    "m:design-props": {
+      "cache": false,
+      "dependsOn": ["^__null_task__"]
+    },
     "dev": {
       "cache": false,
       "persistent": true

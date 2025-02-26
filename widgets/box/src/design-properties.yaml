@@ -1,12 +1,15 @@
 %YAML 1.2
 ---
-# Widget design props:
-# com.radixkit.widget.box.Box:
-#   - name: Variant
-#     type: ToggleButtonGroup
-#     description: The visual variant of the badge
-#     options:
-#       - name: solid
-#         class: rt-variant-solid
-#       - name: soft
-#         class: rt-variant-soft
+com.radixkit.widget.box.Box:
+  - name: Display
+    type: ToggleButtonGroup
+    description: CSS Display property
+    options:
+      - name: inline
+        class: rt-r-display-inline
+      - name: inline-block
+        class: rt-r-display-inline-block
+      - name: flex
+        class: rt-r-display-flex
+      - name: inline-flex
+        class: rt-r-display-inline-flex

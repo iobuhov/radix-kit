@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Radix Kit",
   "scripts": {
-    "m:build": "echo TODO: implement module build"
+    "m:build": "echo TODO: implement module build",
+    "m:design-props": "tsx scripts/run.mts design-props"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
