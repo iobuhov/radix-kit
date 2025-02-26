@@ -1,0 +1,113 @@
+%YAML 1.2
+---
+com.radixkit.widget.flex.Flex:
+  - name: Gap
+    type: ToggleButtonGroup
+    description: CSS Gap property
+    options:
+      - name: "1"
+        class: rt-r-gap-1
+      - name: "2"
+        class: rt-r-gap-2
+      - name: "3"
+        class: rt-r-gap-3
+      - name: "4"
+        class: rt-r-gap-4
+      - name: "5"
+        class: rt-r-gap-5
+      - name: "6"
+        class: rt-r-gap-6
+      - name: "7"
+        class: rt-r-gap-7
+      - name: "8"
+        class: rt-r-gap-8
+      - name: "9"
+        class: rt-r-gap-9
+
+  - name: Row gap
+    type: Dropdown
+    options:
+      - name: "1"
+        class: rt-r-rg-1
+      - name: "2"
+        class: rt-r-rg-2
+      - name: "3"
+        class: rt-r-rg-3
+      - name: "4"
+        class: rt-r-rg-4
+      - name: "5"
+        class: rt-r-rg-5
+      - name: "6"
+        class: rt-r-rg-6
+      - name: "7"
+        class: rt-r-rg-7
+      - name: "8"
+        class: rt-r-rg-8
+      - name: "9"
+        class: rt-r-rg-9
+
+  - name: Column gap
+    type: Dropdown
+    options:
+      - name: "1"
+        class: rt-r-cg-1
+      - name: "2"
+        class: rt-r-cg-2
+      - name: "3"
+        class: rt-r-cg-3
+      - name: "4"
+        class: rt-r-cg-4
+      - name: "5"
+        class: rt-r-cg-5
+      - name: "6"
+        class: rt-r-cg-6
+      - name: "7"
+        class: rt-r-cg-7
+      - name: "8"
+        class: rt-r-cg-8
+      - name: "9"
+        class: rt-r-cg-9
+
+  - name: Wrap
+    type: ToggleButtonGroup
+    description: CSS Flex Wrap property
+    options:
+      - name: wrap
+        class: rt-r-fw-wrap
+      - name: nowrap
+        class: rt-r-fw-nowrap
+      - name: wrap-reverse
+        class: rt-r-fw-wrap-reverse
+
+  - name: Justify Content
+    type: ToggleButtonGroup
+    description: CSS Justify Content property
+    options:
+      - name: start
+        class: rt-r-jc-start
+      - name: end
+        class: rt-r-jc-end
+      - name: center
+        class: rt-r-jc-center
+      - name: space-between
+        class: rt-r-jc-space-between
+
+  - name: Display
+    type: ToggleButtonGroup
+    description: CSS Display property
+    options:
+      - name: inline-flex
+        class: rt-r-display-inline-flex
+
+  - name: Direction
+    type: ToggleButtonGroup
+    description: CSS Flex Direction property
+    options:
+      - name: row
+        class: rt-r-fd-row
+      - name: row-reverse
+        class: rt-r-fd-row-reverse
+      - name: column
+        class: rt-r-fd-column
+      - name: column-reverse
+        class: rt-r-fd-column-reverse
