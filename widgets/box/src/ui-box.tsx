@@ -6,6 +6,7 @@ import { reduceRespProps, ResponsiveProp } from "radix-ui-themes/helpers/resp-pr
 
 interface UIBoxProps {
   class?: string;
+  style?: React.CSSProperties;
   responsiveProps: ResponsiveProp[];
   children?: React.ReactNode;
 }

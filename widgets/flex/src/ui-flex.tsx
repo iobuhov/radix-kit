@@ -13,6 +13,7 @@ const responsivePropsSchema = z.object({
 
 interface UIFlexProps {
   class?: string;
+  style?: React.CSSProperties;
   responsiveProps: ResponsiveProp[];
   children?: React.ReactNode;
 }
@@ -32,5 +33,5 @@ export function UIFlex(props: UIFlexProps): ReactElement {
     );
   }
 
-  return <Flex {...responsivePropsResult.data} className={props.class} children={props.children} />;
+  return <Flex {...responsivePropsResult.data} className={props.class} children={props.children} style={props.style} />;
 }

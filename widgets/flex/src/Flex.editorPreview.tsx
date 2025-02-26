@@ -1,13 +1,10 @@
 import { ReactElement, createElement } from "react";
+import { DropZone } from "radix-ui-themes/preview/dropzone";
 import { FlexPreviewProps } from "../typings/FlexProps";
-import { Flex as RadixFlex } from "radix-ui-themes/components/flex";
+import { UIFlex } from "./ui-flex";
 
 export function preview(props: FlexPreviewProps): ReactElement {
-  return (
-    <RadixFlex wrap="wrap" className={props.class} style={props.styleObject}>
-      <props.children.renderer>
-        <div style={{ display: "contents" }} />
-      </props.children.renderer>
-    </RadixFlex>
-  );
+  const children = <DropZone {...props} prop="children" />;
+
+  return <UIFlex {...props} style={props.styleObject} children={children} />;
 }
