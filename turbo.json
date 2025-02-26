@@ -29,6 +29,10 @@
       "cache": false,
       "persistent": true
     },
+    "dev:styles": {
+      "cache": false,
+      "persistent": true
+    },
     "radix-ui-styles#dev": {
       "dependsOn": ["^build"]
     }

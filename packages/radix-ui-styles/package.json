@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx scripts/watch.mts"
+    "dev:styles": "tsx scripts/watch.mts"
   },
   "keywords": [],
   "author": "",
