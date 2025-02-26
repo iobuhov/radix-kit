@@ -11,7 +11,7 @@ const directionValues = z.enum(["row", "column", "row-reverse", "column-reverse"
 const alignValues = z.enum(["start", "center", "end", "baseline", "stretch"]);
 
 // Justify values
-const justifyValues = z.enum(["start", "center", "end", "between", "around"]);
+const justifyValues = z.enum(["start", "center", "end", "between"]);
 
 // Wrap values
 const wrapValues = z.enum(["nowrap", "wrap", "wrap-reverse"]);
