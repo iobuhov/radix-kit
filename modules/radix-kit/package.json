@@ -27,6 +27,7 @@
     "badge": "workspace:^",
     "box": "workspace:^",
     "flex": "workspace:^",
+    "grid-component": "workspace:^",
     "radix-ui-styles": "workspace:^",
     "radix-ui-themes": "workspace:^",
     "task-utils": "workspace:^",
