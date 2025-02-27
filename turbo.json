@@ -13,6 +13,7 @@
       "outputs": ["dist/**"]
     },
     "w:build:dev": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "dependsOn": ["^build"],
       "cache": false
     },

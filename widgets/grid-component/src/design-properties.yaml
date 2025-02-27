@@ -1,12 +1,69 @@
 %YAML 1.2
 ---
-# Widget design props:
-# com.radixkit.widget.gridcomponent.GridComponent:
-#   - name: Variant
-#     type: ToggleButtonGroup
-#     description: The visual variant of the badge
-#     options:
-#       - name: solid
-#         class: rt-variant-solid
-#       - name: soft
-#         class: rt-variant-soft
+com.radixkit.widget.gridcomponent.GridComponent:
+  - name: Columns
+    type: ToggleButtonGroup
+    description: The number of grid columns
+    options:
+      - name: "1"
+        class: "rt-r-gtc-1"
+      - name: "2"
+        class: "rt-r-gtc-2"
+      - name: "3"
+        class: "rt-r-gtc-3"
+      - name: "4"
+        class: "rt-r-gtc-4"
+      - name: "5"
+        class: "rt-r-gtc-5"
+      - name: "6"
+        class: "rt-r-gtc-6"
+      - name: "7"
+        class: "rt-r-gtc-7"
+      - name: "8"
+        class: "rt-r-gtc-8"
+      - name: "9"
+        class: "rt-r-gtc-9"
+
+  - name: Column gap
+    type: ToggleButtonGroup
+    options:
+      - name: "1"
+        class: rt-r-cg-1
+      - name: "2"
+        class: rt-r-cg-2
+      - name: "3"
+        class: rt-r-cg-3
+      - name: "4"
+        class: rt-r-cg-4
+      - name: "5"
+        class: rt-r-cg-5
+      - name: "6"
+        class: rt-r-cg-6
+      - name: "7"
+        class: rt-r-cg-7
+      - name: "8"
+        class: rt-r-cg-8
+      - name: "9"
+        class: rt-r-cg-9
+
+  - name: Row gap
+    type: ToggleButtonGroup
+    options:
+      - name: "1"
+        class: rt-r-rg-1
+      - name: "2"
+        class: rt-r-rg-2
+      - name: "3"
+        class: rt-r-rg-3
+      - name: "4"
+        class: rt-r-rg-4
+      - name: "5"
+        class: rt-r-rg-5
+      - name: "6"
+        class: rt-r-rg-6
+      - name: "7"
+        class: rt-r-rg-7
+      - name: "8"
+        class: rt-r-rg-8
+      - name: "9"
+        class: rt-r-rg-9

@@ -11,8 +11,9 @@
 }
 
 .flex-demo-item {
-  background: #cccccc;
+  background: rgba(160, 160, 160, 0.75);
   flex-grow: 0;
+  height: 200px;
 }
 
 :root {
