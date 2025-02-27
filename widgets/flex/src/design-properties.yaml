@@ -92,6 +92,21 @@ com.radixkit.widget.flex.Flex:
       - name: space-between
         class: rt-r-jc-space-between
 
+  - name: Align Items
+    type: ToggleButtonGroup
+    description: CSS Align Items property
+    options:
+      - name: start
+        class: rt-r-ai-start
+      - name: end
+        class: rt-r-ai-end
+      - name: center
+        class: rt-r-ai-center
+      - name: baseline
+        class: rt-r-ai-baseline
+      - name: stretch
+        class: rt-r-ai-stretch
+
   - name: Display
     type: ToggleButtonGroup
     description: CSS Display property

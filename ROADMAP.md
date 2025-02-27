@@ -4,8 +4,8 @@
 
 |           | Responsive | DP  | Values |
 | --------- | ---------- | --- | ------ |
-| Box       | -          | -   | -      |
-| Flex      | -          | -   | -      |
+| Box       | x          | x   | -      |
+| Flex      | x          | -   | -      |
 | Grid      | -          | -   | -      |
 | Container | -          | -   | -      |
 

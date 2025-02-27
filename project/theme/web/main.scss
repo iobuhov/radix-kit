@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+.flex-demo-item {
+  background: #cccccc;
+  flex-grow: 0;
+}
+
 :root {
   --my-spacing: 99.9px;
 }
