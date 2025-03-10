@@ -76,6 +76,9 @@ importers:
       grid-component:
         specifier: workspace:^
         version: link:../../widgets/grid-component
+      layout-classic:
+        specifier: workspace:^
+        version: link:../../widgets/layout-classic
       radix-ui-styles:
         specifier: workspace:^
         version: link:../../packages/radix-ui-styles
@@ -354,6 +357,28 @@ importers:
         version: 10.19.57669
 
   widgets/grid-component:
+    dependencies:
+      classnames:
+        specifier: ^2.2.6
+        version: 2.5.1
+      radix-ui-themes:
+        specifier: workspace:^
+        version: link:../../packages/radix-ui-themes
+    devDependencies:
+      '@mendix/pluggable-widgets-tools':
+        specifier: ^10.15.0
+        version: 10.18.0(@jest/transform@29.7.0)(@jest/types@29.6.3)(@types/babel__core@7.20.5)(@types/node@22.13.5)(picomatch@4.0.2)(react-dom@18.3.1(react@18.3.1))(react-native@0.78.0(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)(tslib@2.8.1)
+      '@prettier/plugin-xml':
+        specifier: ^3.4.1
+        version: 3.4.1(prettier@3.5.1)
+      '@types/big.js':
+        specifier: ^6.0.2
+        version: 6.2.2
+      mendix:
+        specifier: ^10.19.57669
+        version: 10.19.57669
+
+  widgets/layout-classic:
     dependencies:
       classnames:
         specifier: ^2.2.6

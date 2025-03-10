@@ -28,6 +28,7 @@
     "box": "workspace:^",
     "flex": "workspace:^",
     "grid-component": "workspace:^",
+    "layout-classic": "workspace:^",
     "radix-ui-styles": "workspace:^",
     "radix-ui-themes": "workspace:^",
     "task-utils": "workspace:^",

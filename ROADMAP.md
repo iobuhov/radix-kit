@@ -9,9 +9,36 @@
 | Grid      | -          | -   | -      |
 | Container | -          | -   | -      |
 
-## Phase II - Mapping props
+## Phase II - ~~Mapping props~~ Adding components
 
-TBD
+- Text
+- Heading
+
+---
+
+- Avatar
+- Button
+- Card
+- Checkbox
+- Checkbox Cards
+- Dialog
+- Dropdown Menu
+- Hover Card
+- Icon Button
+- Inset
+- Popover
+- Progress
+- Radio Group
+- Radio Cards
+- Scroll Area
+- Select
+- Slider
+- Spinner
+- Switch
+- Tabs
+- Text Area
+- Text Field
+- Tooltip
 
 ## Phase II - Layout
 
