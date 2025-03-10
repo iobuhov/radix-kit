@@ -19,7 +19,6 @@ interface UIFlexProps {
 }
 
 export function UIFlex(props: UIFlexProps): ReactElement {
-  console.log("UIFlex", props);
   const responsivePropsResult = useMemo(
     () => responsivePropsSchema.safeParse(reduceRespProps(props.responsiveProps)),
     [props.responsiveProps]

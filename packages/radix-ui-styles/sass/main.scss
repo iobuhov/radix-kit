@@ -5,6 +5,7 @@
 @forward "tokens/index";
 @forward "components/index";
 @forward "utilities/index";
+@forward "layouts/layout-classic";
 
 .radix-themes:where([data-is-root-theme="true"]) {
   /* Create a new stacking context on the root `Theme` so layered components work out of the box */

@@ -15,8 +15,16 @@
   <icon />
   <properties>
     <propertyGroup caption="General">
-      <property key="text" type="string" required="false">
-        <caption>Text</caption>
+      <property key="topbar" type="widgets" required="false">
+        <caption>Topbar</caption>
+        <description />
+      </property>
+      <property key="sidenav" type="widgets" required="false">
+        <caption>Side nav</caption>
+        <description />
+      </property>
+      <property key="content" type="widgets" required="false">
+        <caption>Main</caption>
         <description />
       </property>
     </propertyGroup>
