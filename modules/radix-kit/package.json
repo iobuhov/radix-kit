@@ -31,6 +31,7 @@
     "layout-classic": "workspace:^",
     "radix-ui-styles": "workspace:^",
     "radix-ui-themes": "workspace:^",
+    "tabs": "workspace:^",
     "task-utils": "workspace:^",
     "theme-provider": "workspace:^"
   }

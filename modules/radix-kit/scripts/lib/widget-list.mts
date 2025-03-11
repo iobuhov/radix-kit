@@ -1,1 +1,1 @@
-export const list = ["badge", "box", "flex", "grid-component", "layout-classic", "theme-provider"];
+export const list = ["badge", "box", "flex", "grid-component", "layout-classic", "tabs", "theme-provider"];

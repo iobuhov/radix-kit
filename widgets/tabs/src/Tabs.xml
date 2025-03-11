@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+  id="com.radixkit.widget.tabs.Tabs"
+  pluginWidget="true"
+  needsEntityContext="true"
+  offlineCapable="true"
+  supportedPlatform="Web"
+  xmlns="http://www.mendix.com/widget/1.0/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+  <name>Tabs</name>
+  <description>Set of content sections to be displayed one at a time</description>
+  <studioProCategory>Radix Kit Components</studioProCategory>
+  <icon />
+  <properties>
+    <propertyGroup caption="General">
+      <property key="tabs" type="object" isList="true" required="false">
+        <caption>Tabs</caption>
+        <description />
+        <properties>
+          <propertyGroup caption="General">
+            <property key="caption" type="textTemplate">
+              <caption>Caption</caption>
+              <description />
+            </property>
+            <property key="value" type="integer" defaultValue="1">
+              <caption>Value</caption>
+              <description />
+            </property>
+            <property key="content" type="widgets">
+              <caption>Content</caption>
+              <description />
+            </property>
+          </propertyGroup>
+        </properties>
+      </property>
+      <property key="defaultValue" type="integer" defaultValue="0">
+        <caption>Default tab</caption>
+        <description />
+      </property>
+    </propertyGroup>
+  </properties>
+</widget>

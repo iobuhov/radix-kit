@@ -18,3 +18,8 @@
     min-height: 100dvh;
   }
 }
+
+.rt-PreviewTab:not(:has([data-selected])) {
+  max-height: 35px;
+  overflow: hidden;
+}
