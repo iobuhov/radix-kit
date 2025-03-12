@@ -1,4 +1,3 @@
-import { Selectable } from "mendix/preview/Selectable";
 import { createElement } from "react";
 import { Root, List, Trigger, Content } from "radix-ui-themes/components/tabs";
 
@@ -45,13 +44,5 @@ export function UITabsContent(props: { tabs: Tab[] }) {
     <Content key={tab.value} value={String(tab.value)}>
       {tab.content}
     </Content>
-  ));
-}
-
-export function UITabsPreview(props: { tabs: (Tab & { object: object })[] }) {
-  return props.tabs.map(tab => (
-    <Selectable object={tab.object} key={tab.value} caption={tab.caption}>
-      {tab.content}
-    </Selectable>
   ));
 }

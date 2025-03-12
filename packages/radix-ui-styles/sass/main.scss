@@ -19,7 +19,33 @@
   }
 }
 
-.rt-PreviewTab:not(:has([data-selected])) {
-  max-height: 35px;
-  overflow: hidden;
+// .rt-PreviewTab:not(:has([data-selected])) {
+//   max-height: 35px;
+//   overflow: hidden;
+// }
+
+.rt-PreviewTab {
+  border-bottom: 1px dashed lightslategray;
+}
+
+.rt-PreviewTab:where([data-active="true"]) {
+  min-height: 64px;
+  order: 1;
+}
+
+.rt-PreviewTab:where([data-active="false"]) {
+  order: 2;
+  height: 16px;
+  background-color: #6f6f6f17;
+  display: flex;
+}
+
+.rt-PreviewTab:where([data-active="false"]) > * {
+  display: none;
+}
+
+.rt-PreviewTab:where([data-active="false"])::after {
+  content: attr(data-caption);
+  font-size: 0.75em;
+  font-family: monospace;
 }
