@@ -15,9 +15,12 @@
   <icon />
   <properties>
     <propertyGroup caption="General">
-      <property key="text" type="string" required="false">
-        <caption>Text</caption>
+      <property key="value" type="attribute" required="false">
+        <caption>Attribute</caption>
         <description />
+        <attributeTypes>
+          <attributeType name="String" />
+        </attributeTypes>
       </property>
     </propertyGroup>
   </properties>

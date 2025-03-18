@@ -4,13 +4,14 @@
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
+import { EditableValue } from "mendix";
 
 export interface TextFieldContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    text: string;
+    value?: EditableValue<string>;
 }
 
 export interface TextFieldPreviewProps {
@@ -24,5 +25,5 @@ export interface TextFieldPreviewProps {
     readOnly: boolean;
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
-    text: string;
+    value: string;
 }

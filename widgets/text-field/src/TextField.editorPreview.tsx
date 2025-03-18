@@ -1,6 +1,8 @@
 import { ReactElement, createElement } from "react";
 import { TextFieldPreviewProps } from "../typings/TextFieldProps";
+import { UITextField } from "./ui-text-field";
 
-export function preview({ text }: TextFieldPreviewProps): ReactElement {
-  return <div>Preview {text}</div>;
+export function preview({ value }: TextFieldPreviewProps): ReactElement {
+  // HEllo
+  return <UITextField value={value} onChange={() => {}} />;
 }
