@@ -33,6 +33,7 @@
     "radix-ui-themes": "workspace:^",
     "tabs": "workspace:^",
     "task-utils": "workspace:^",
+    "text-field": "workspace:^",
     "theme-provider": "workspace:^"
   }
 }
