@@ -22,13 +22,13 @@
     "release": "pluggable-widgets-tools release:web"
   },
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "*",
+    "@mendix/pluggable-widgets-tools": "^10.18.1",
     "@prettier/plugin-xml": "^3.4.1",
-    "@types/big.js": "^6.0.2",
-    "mendix": "^10.19.57669"
+    "@types/big.js": "^6.2.2",
+    "mendix": "^10.20.60519"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
+    "classnames": "^2.5.1",
     "radix-ui-themes": "workspace:^",
     "zod": "^3.24.2"
   }

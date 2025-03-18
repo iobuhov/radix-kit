@@ -40,10 +40,10 @@
     "update-radix-colors": "zx scripts/update-radix-colors.mjs"
   },
   "dependencies": {
-    "classnames": "^2.3.2",
-    "radix-ui": "^1.1.2",
+    "classnames": "^2.5.1",
+    "radix-ui": "^1.1.3",
     "react-remove-scroll-bar": "^2.3.8",
-    "sass": "^1.84.0",
+    "sass": "^1.86.0",
     "zod": "^3.24.2"
   },
   "peerDependencies": {
@@ -61,19 +61,19 @@
     }
   },
   "devDependencies": {
-    "@eslint/js": "^9.18.0",
+    "@eslint/js": "^9.22.0",
     "esbuild": "0.20.0",
-    "eslint": "^9.18.0",
+    "eslint": "^9.22.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "globals": "^15.14.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^15.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "stylelint": "16.6.1",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "^8.18.1",
-    "zx": "^8.3.2"
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1",
+    "zx": "^8.4.1"
   },
   "homepage": "https://radix-ui.com/themes",
   "repository": {

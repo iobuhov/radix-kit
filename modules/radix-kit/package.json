@@ -18,10 +18,10 @@
     "gulp": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "picocolors": "^1.1.1",
-    "tsx": "^4.19.2",
+    "tsx": "^4.19.3",
     "vinyl": "^3.0.0",
     "yaml": "^2.7.0",
-    "zx": "^8.3.2"
+    "zx": "^8.4.1"
   },
   "dependencies": {
     "badge": "workspace:^",
