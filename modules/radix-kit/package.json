@@ -28,6 +28,7 @@
     "badge": "workspace:^",
     "box": "workspace:^",
     "button": "workspace:^",
+    "card": "workspace:^",
     "flex": "workspace:^",
     "grid-component": "workspace:^",
     "layout-classic": "workspace:^",

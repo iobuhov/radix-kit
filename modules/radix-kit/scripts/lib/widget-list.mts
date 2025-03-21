@@ -3,6 +3,7 @@ export const list = [
   "badge",
   "box",
   "button",
+  "card",
   "flex",
   "grid-component",
   "layout-classic",
