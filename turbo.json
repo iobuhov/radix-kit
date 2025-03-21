@@ -3,39 +3,27 @@
   "ui": "tui",
 
   "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^build"]
+    },
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "w:build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
-    },
-    "w:build:dev": {
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "dependsOn": ["^build"],
-      "cache": false
-    },
     "m:build": {
-      "dependsOn": ["^w:build"],
+      "dependsOn": ["^build"],
       "cache": false
     },
-    "__null_task__": {},
     "m:design-props": {
       "cache": false,
-      "dependsOn": ["^__null_task__"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "dev:styles": {
-      "cache": false,
-      "persistent": true
+      "dependsOn": ["^__transit_node__", "task-utils#build"]
     },
     "radix-ui-styles#dev": {
-      "dependsOn": ["^build"]
-    }
+      "dependsOn": ["task-utils#build"]
+    },
+    "__transit_node__": {}
   }
 }

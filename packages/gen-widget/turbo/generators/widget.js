@@ -42,7 +42,7 @@ const extendData = (data, plop) => {
 export default function widgetGenerator(plop) {
   plop.setActionType("install", async (data) => {
     const baseDir = path.join(data.turbo.paths.root, "widgets", data.packageName);
-    spawnSync(`cd ${baseDir} && pnpm install && pnpm w:build`, { shell: true, stdio: "inherit" });
+    spawnSync(`cd ${baseDir} && pnpm install && pnpm build`, { shell: true, stdio: "inherit" });
   });
 
   plop.setActionType("inject-widget-list", async (data) => {
