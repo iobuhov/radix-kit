@@ -6,7 +6,7 @@
     "build": "turbo run build",
     "dev": "cross-env TURBO_FORCE=true turbo watch dev:styles w:build:dev m:design-props --concurrency 8",
     "lint": "turbo run lint",
-    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "clean": "git clean -dfx",
     "set-project": "pnpm tsx scripts/set-project.mts",
     "dev:prepare": "corepack enable && corepack prepare && pnpm install && husky",
     "gen": "turbo gen"
