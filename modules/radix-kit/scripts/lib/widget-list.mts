@@ -1,4 +1,5 @@
 export const list = [
+  "avatar",
   "badge",
   "box",
   "flex",
@@ -7,4 +8,4 @@ export const list = [
   "tabs",
   "text-field",
   "theme-provider",
-];
+]
