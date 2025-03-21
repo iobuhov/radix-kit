@@ -4,6 +4,7 @@ export const list = [
   "box",
   "button",
   "card",
+  "checkbox",
   "flex",
   "grid-component",
   "layout-classic",

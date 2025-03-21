@@ -29,6 +29,7 @@
     "box": "workspace:^",
     "button": "workspace:^",
     "card": "workspace:^",
+    "checkbox": "workspace:^",
     "flex": "workspace:^",
     "grid-component": "workspace:^",
     "layout-classic": "workspace:^",
