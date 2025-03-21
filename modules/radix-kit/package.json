@@ -27,6 +27,7 @@
     "avatar": "workspace:^",
     "badge": "workspace:^",
     "box": "workspace:^",
+    "button": "workspace:^",
     "flex": "workspace:^",
     "grid-component": "workspace:^",
     "layout-classic": "workspace:^",
