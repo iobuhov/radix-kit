@@ -30,6 +30,7 @@
     "button": "workspace:^",
     "card": "workspace:^",
     "checkbox": "workspace:^",
+    "dialog": "workspace:^",
     "flex": "workspace:^",
     "grid-component": "workspace:^",
     "layout-classic": "workspace:^",
