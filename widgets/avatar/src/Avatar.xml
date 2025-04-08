@@ -15,8 +15,8 @@
   <icon />
   <properties>
     <propertyGroup caption="General">
-      <property key="text" type="string" required="false">
-        <caption>Text</caption>
+      <property key="src" type="string" required="false">
+        <caption>Source URL</caption>
         <description />
       </property>
     </propertyGroup>

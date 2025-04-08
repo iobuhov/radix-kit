@@ -10,7 +10,7 @@ export interface AvatarContainerProps {
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    text: string;
+    src: string;
 }
 
 export interface AvatarPreviewProps {
@@ -24,5 +24,5 @@ export interface AvatarPreviewProps {
     readOnly: boolean;
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
-    text: string;
+    src: string;
 }
