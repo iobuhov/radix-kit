@@ -15,9 +15,13 @@
   <icon />
   <properties>
     <propertyGroup caption="General">
-      <property key="text" type="string" required="false">
-        <caption>Text</caption>
+      <property key="attr" type="attribute" required="false">
+        <caption>Attribute</caption>
         <description />
+        <attributeTypes>
+          <attributeType name="Integer" />
+          <attributeType name="Decimal" />
+        </attributeTypes>
       </property>
     </propertyGroup>
   </properties>

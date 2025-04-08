@@ -4,13 +4,15 @@
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
+import { EditableValue } from "mendix";
+import { Big } from "big.js";
 
 export interface ProgressContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    text: string;
+    attr?: EditableValue<Big>;
 }
 
 export interface ProgressPreviewProps {
@@ -24,5 +26,5 @@ export interface ProgressPreviewProps {
     readOnly: boolean;
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
-    text: string;
+    attr: string;
 }
