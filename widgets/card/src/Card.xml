@@ -15,8 +15,8 @@
   <icon />
   <properties>
     <propertyGroup caption="General">
-      <property key="text" type="string" required="false">
-        <caption>Text</caption>
+      <property key="children" type="widgets" required="false">
+        <caption>Content</caption>
         <description />
       </property>
     </propertyGroup>
