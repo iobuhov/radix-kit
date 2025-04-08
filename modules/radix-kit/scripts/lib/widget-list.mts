@@ -9,6 +9,7 @@ export const list = [
   "flex",
   "grid-component",
   "layout-classic",
+  "progress",
   "tabs",
   "text-field",
   "theme-provider",

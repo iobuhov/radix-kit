@@ -34,6 +34,7 @@
     "flex": "workspace:^",
     "grid-component": "workspace:^",
     "layout-classic": "workspace:^",
+    "progress": "workspace:^",
     "radix-ui-styles": "workspace:^",
     "radix-ui-themes": "workspace:^",
     "tabs": "workspace:^",
