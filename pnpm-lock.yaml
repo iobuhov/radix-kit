@@ -21,6 +21,9 @@ importers:
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
+      widget-utils:
+        specifier: workspace:^
+        version: link:packages/widget-utils
       zx:
         specifier: ^8.4.1
         version: 8.4.1
@@ -304,6 +307,8 @@ importers:
       vinyl-paths:
         specifier: ^5.0.0
         version: 5.0.0
+
+  packages/widget-utils: {}
 
   widgets/avatar:
     dependencies:

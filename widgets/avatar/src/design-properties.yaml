@@ -1,12 +1,25 @@
 %YAML 1.2
 ---
-# Widget design props:
-# com.radixkit.widget.avatar.Avatar:
-#   - name: Variant
-#     type: ToggleButtonGroup
-#     description: The visual variant of the badge
-#     options:
-#       - name: solid
-#         class: rt-variant-solid
-#       - name: soft
-#         class: rt-variant-soft
+com.radixkit.widget.avatar.Avatar:
+  - name: Size
+    type: ToggleButtonGroup
+    description: Badge size
+    options:
+      - name: "1"
+        class: rt-r-size-1
+      - name: "2"
+        class: rt-r-size-2
+      - name: "3 (default)"
+        class: rt-r-size-3
+      - name: "4"
+        class: rt-r-size-4
+      - name: "5"
+        class: rt-r-size-5
+      - name: "6"
+        class: rt-r-size-6
+      - name: "7"
+        class: rt-r-size-7
+      - name: "8"
+        class: rt-r-size-8
+      - name: "9"
+        class: rt-r-size-9

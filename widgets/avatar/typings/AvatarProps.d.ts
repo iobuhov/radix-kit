@@ -5,12 +5,15 @@
  */
 import { CSSProperties } from "react";
 
+export type RadiusEnum = "none" | "small" | "medium" | "large" | "full";
+
 export interface AvatarContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
     src: string;
+    radius: RadiusEnum;
 }
 
 export interface AvatarPreviewProps {
@@ -25,4 +28,5 @@ export interface AvatarPreviewProps {
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
     src: string;
+    radius: RadiusEnum;
 }

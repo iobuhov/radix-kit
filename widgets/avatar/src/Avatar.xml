@@ -19,6 +19,17 @@
         <caption>Source URL</caption>
         <description />
       </property>
+      <property key="radius" type="enumeration" defaultValue="medium">
+        <caption>Radius</caption>
+        <description />
+        <enumerationValues>
+          <enumerationValue key="none">None</enumerationValue>
+          <enumerationValue key="small">Small</enumerationValue>
+          <enumerationValue key="medium">Medium</enumerationValue>
+          <enumerationValue key="large">Large</enumerationValue>
+          <enumerationValue key="full">Full</enumerationValue>
+        </enumerationValues>
+      </property>
     </propertyGroup>
   </properties>
 </widget>
