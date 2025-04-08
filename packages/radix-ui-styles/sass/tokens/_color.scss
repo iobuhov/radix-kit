@@ -1,5 +1,5 @@
-@forward '../deps/@radix-ui/colors/black-alpha.css';
-@forward '../deps/@radix-ui/colors/white-alpha.css';
+@forward "../deps/@radix-ui/colors/black-alpha.css";
+@forward "../deps/@radix-ui/colors/white-alpha.css";
 
 /* * * * * * * * * * * * * * * * * * * */
 /*                                     */
@@ -7,7 +7,8 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 
-:where(.radix-themes) {
+:is(.light, .light-theme),
+:is(.light, .light-theme) :where(.radix-themes:not(.dark, .dark-theme)) {
   --color-background: white;
   --color-overlay: var(--black-a6);
   --color-panel-solid: white;
@@ -68,7 +69,7 @@
 /* * * * * * * * * * * * * * * * * * * */
 
 .radix-themes,
-[data-accent-color]:where(:not([data-accent-color=''], [data-accent-color='gray'])) {
+[data-accent-color]:where(:not([data-accent-color=""], [data-accent-color="gray"])) {
   --focus-1: var(--accent-1);
   --focus-2: var(--accent-2);
   --focus-3: var(--accent-3);
@@ -108,7 +109,7 @@
 
 .radix-themes {
   color: var(--gray-12);
-  &:where([data-has-background='true']) {
+  &:where([data-has-background="true"]) {
     background-color: var(--color-background);
   }
 }
@@ -120,11 +121,11 @@
 /* * * * * * * * * * * * * * * * * * * */
 
 .radix-themes {
-  &:where([data-panel-background='solid']) {
+  &:where([data-panel-background="solid"]) {
     --color-panel: var(--color-panel-solid);
     --backdrop-filter-panel: none;
   }
-  &:where([data-panel-background='translucent']) {
+  &:where([data-panel-background="translucent"]) {
     --color-panel: var(--color-panel-translucent);
     --backdrop-filter-panel: blur(64px);
   }
@@ -136,7 +137,7 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 
-[data-accent-color='amber'] {
+[data-accent-color="amber"] {
   --accent-1: var(--amber-1);
   --accent-2: var(--amber-2);
   --accent-3: var(--amber-3);
@@ -169,7 +170,7 @@
   --accent-track: var(--amber-track);
 }
 
-[data-accent-color='blue'] {
+[data-accent-color="blue"] {
   --accent-1: var(--blue-1);
   --accent-2: var(--blue-2);
   --accent-3: var(--blue-3);
@@ -202,7 +203,7 @@
   --accent-track: var(--blue-track);
 }
 
-[data-accent-color='bronze'] {
+[data-accent-color="bronze"] {
   --accent-1: var(--bronze-1);
   --accent-2: var(--bronze-2);
   --accent-3: var(--bronze-3);
@@ -235,7 +236,7 @@
   --accent-track: var(--bronze-track);
 }
 
-[data-accent-color='brown'] {
+[data-accent-color="brown"] {
   --accent-1: var(--brown-1);
   --accent-2: var(--brown-2);
   --accent-3: var(--brown-3);
@@ -268,7 +269,7 @@
   --accent-track: var(--brown-track);
 }
 
-[data-accent-color='crimson'] {
+[data-accent-color="crimson"] {
   --accent-1: var(--crimson-1);
   --accent-2: var(--crimson-2);
   --accent-3: var(--crimson-3);
@@ -301,7 +302,7 @@
   --accent-track: var(--crimson-track);
 }
 
-[data-accent-color='cyan'] {
+[data-accent-color="cyan"] {
   --accent-1: var(--cyan-1);
   --accent-2: var(--cyan-2);
   --accent-3: var(--cyan-3);
@@ -334,7 +335,7 @@
   --accent-track: var(--cyan-track);
 }
 
-[data-accent-color='gold'] {
+[data-accent-color="gold"] {
   --accent-1: var(--gold-1);
   --accent-2: var(--gold-2);
   --accent-3: var(--gold-3);
@@ -367,7 +368,7 @@
   --accent-track: var(--gold-track);
 }
 
-[data-accent-color='grass'] {
+[data-accent-color="grass"] {
   --accent-1: var(--grass-1);
   --accent-2: var(--grass-2);
   --accent-3: var(--grass-3);
@@ -400,7 +401,7 @@
   --accent-track: var(--grass-track);
 }
 
-[data-accent-color='gray'] {
+[data-accent-color="gray"] {
   --accent-1: var(--gray-1);
   --accent-2: var(--gray-2);
   --accent-3: var(--gray-3);
@@ -433,7 +434,7 @@
   --accent-track: var(--gray-track);
 }
 
-[data-accent-color='green'] {
+[data-accent-color="green"] {
   --accent-1: var(--green-1);
   --accent-2: var(--green-2);
   --accent-3: var(--green-3);
@@ -466,7 +467,7 @@
   --accent-track: var(--green-track);
 }
 
-[data-accent-color='indigo'] {
+[data-accent-color="indigo"] {
   --accent-1: var(--indigo-1);
   --accent-2: var(--indigo-2);
   --accent-3: var(--indigo-3);
@@ -499,7 +500,7 @@
   --accent-track: var(--indigo-track);
 }
 
-[data-accent-color='iris'] {
+[data-accent-color="iris"] {
   --accent-1: var(--iris-1);
   --accent-2: var(--iris-2);
   --accent-3: var(--iris-3);
@@ -532,7 +533,7 @@
   --accent-track: var(--iris-track);
 }
 
-[data-accent-color='jade'] {
+[data-accent-color="jade"] {
   --accent-1: var(--jade-1);
   --accent-2: var(--jade-2);
   --accent-3: var(--jade-3);
@@ -565,7 +566,7 @@
   --accent-track: var(--jade-track);
 }
 
-[data-accent-color='lime'] {
+[data-accent-color="lime"] {
   --accent-1: var(--lime-1);
   --accent-2: var(--lime-2);
   --accent-3: var(--lime-3);
@@ -598,7 +599,7 @@
   --accent-track: var(--lime-track);
 }
 
-[data-accent-color='mint'] {
+[data-accent-color="mint"] {
   --accent-1: var(--mint-1);
   --accent-2: var(--mint-2);
   --accent-3: var(--mint-3);
@@ -631,7 +632,7 @@
   --accent-track: var(--mint-track);
 }
 
-[data-accent-color='orange'] {
+[data-accent-color="orange"] {
   --accent-1: var(--orange-1);
   --accent-2: var(--orange-2);
   --accent-3: var(--orange-3);
@@ -664,7 +665,7 @@
   --accent-track: var(--orange-track);
 }
 
-[data-accent-color='pink'] {
+[data-accent-color="pink"] {
   --accent-1: var(--pink-1);
   --accent-2: var(--pink-2);
   --accent-3: var(--pink-3);
@@ -697,7 +698,7 @@
   --accent-track: var(--pink-track);
 }
 
-[data-accent-color='plum'] {
+[data-accent-color="plum"] {
   --accent-1: var(--plum-1);
   --accent-2: var(--plum-2);
   --accent-3: var(--plum-3);
@@ -730,7 +731,7 @@
   --accent-track: var(--plum-track);
 }
 
-[data-accent-color='purple'] {
+[data-accent-color="purple"] {
   --accent-1: var(--purple-1);
   --accent-2: var(--purple-2);
   --accent-3: var(--purple-3);
@@ -763,7 +764,7 @@
   --accent-track: var(--purple-track);
 }
 
-[data-accent-color='red'] {
+[data-accent-color="red"] {
   --accent-1: var(--red-1);
   --accent-2: var(--red-2);
   --accent-3: var(--red-3);
@@ -796,7 +797,7 @@
   --accent-track: var(--red-track);
 }
 
-[data-accent-color='ruby'] {
+[data-accent-color="ruby"] {
   --accent-1: var(--ruby-1);
   --accent-2: var(--ruby-2);
   --accent-3: var(--ruby-3);
@@ -829,7 +830,7 @@
   --accent-track: var(--ruby-track);
 }
 
-[data-accent-color='sky'] {
+[data-accent-color="sky"] {
   --accent-1: var(--sky-1);
   --accent-2: var(--sky-2);
   --accent-3: var(--sky-3);
@@ -862,7 +863,7 @@
   --accent-track: var(--sky-track);
 }
 
-[data-accent-color='teal'] {
+[data-accent-color="teal"] {
   --accent-1: var(--teal-1);
   --accent-2: var(--teal-2);
   --accent-3: var(--teal-3);
@@ -895,7 +896,7 @@
   --accent-track: var(--teal-track);
 }
 
-[data-accent-color='tomato'] {
+[data-accent-color="tomato"] {
   --accent-1: var(--tomato-1);
   --accent-2: var(--tomato-2);
   --accent-3: var(--tomato-3);
@@ -928,7 +929,7 @@
   --accent-track: var(--tomato-track);
 }
 
-[data-accent-color='violet'] {
+[data-accent-color="violet"] {
   --accent-1: var(--violet-1);
   --accent-2: var(--violet-2);
   --accent-3: var(--violet-3);
@@ -961,7 +962,7 @@
   --accent-track: var(--violet-track);
 }
 
-[data-accent-color='yellow'] {
+[data-accent-color="yellow"] {
   --accent-1: var(--yellow-1);
   --accent-2: var(--yellow-2);
   --accent-3: var(--yellow-3);
@@ -1001,7 +1002,7 @@
 /* * * * * * * * * * * * * * * * * * * */
 
 .radix-themes {
-  &:where([data-gray-color='mauve']) {
+  &:where([data-gray-color="mauve"]) {
     --gray-1: var(--mauve-1);
     --gray-2: var(--mauve-2);
     --gray-3: var(--mauve-3);
@@ -1034,7 +1035,7 @@
     --gray-track: var(--mauve-track);
   }
 
-  &:where([data-gray-color='olive']) {
+  &:where([data-gray-color="olive"]) {
     --gray-1: var(--olive-1);
     --gray-2: var(--olive-2);
     --gray-3: var(--olive-3);
@@ -1067,7 +1068,7 @@
     --gray-track: var(--olive-track);
   }
 
-  &:where([data-gray-color='sage']) {
+  &:where([data-gray-color="sage"]) {
     --gray-1: var(--sage-1);
     --gray-2: var(--sage-2);
     --gray-3: var(--sage-3);
@@ -1100,7 +1101,7 @@
     --gray-track: var(--sage-track);
   }
 
-  &:where([data-gray-color='sand']) {
+  &:where([data-gray-color="sand"]) {
     --gray-1: var(--sand-1);
     --gray-2: var(--sand-2);
     --gray-3: var(--sand-3);
@@ -1133,7 +1134,7 @@
     --gray-track: var(--sand-track);
   }
 
-  &:where([data-gray-color='slate']) {
+  &:where([data-gray-color="slate"]) {
     --gray-1: var(--slate-1);
     --gray-2: var(--slate-2);
     --gray-3: var(--slate-3);
