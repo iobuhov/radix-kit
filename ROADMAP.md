@@ -16,12 +16,11 @@
 
 ---
 
-- Avatar
-- Button
-- Card
-- Checkbox
+- Avatar ✅
+- Button ✅
+- Card ✅
+- Checkbox [ui: ✅]
 - Checkbox Cards
-- Dialog
 - Dropdown Menu
 - Hover Card
 - Icon Button
