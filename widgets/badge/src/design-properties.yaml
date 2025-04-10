@@ -13,26 +13,7 @@ com.radixkit.widget.badge.Badge:
         class: rt-variant-surface
       - name: outline
         class: rt-variant-outline
-  - name: Laptop size
-    type: ToggleButtonGroup
-    description: Size on laptop
-    options:
-      - name: "1"
-        class: lg:rt-r-size-1
-      - name: "2"
-        class: lg:rt-r-size-2
-      - name: "3"
-        class: lg:rt-r-size-3
-  - name: Phone size (portrait)
-    type: Dropdown
-    description: Size on phone (portrait)
-    options:
-      - name: "1"
-        class: xs:rt-r-size-1
-      - name: "2"
-        class: xs:rt-r-size-2
-      - name: "3"
-        class: xs:rt-r-size-3
+
   - name: Size
     type: ToggleButtonGroup
     description: Badge size
