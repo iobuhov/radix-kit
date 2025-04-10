@@ -10,7 +10,7 @@ export interface ButtonContainerProps {
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    text: string;
+    caption: string;
 }
 
 export interface ButtonPreviewProps {
@@ -24,5 +24,5 @@ export interface ButtonPreviewProps {
     readOnly: boolean;
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
-    text: string;
+    caption: string;
 }
