@@ -1,10 +1,18 @@
-import { createElement } from "react";
-import { ButtonContainerProps } from "../typings/ButtonProps";
+import { createElement, CSSProperties } from "react";
+import { Button } from "radix-ui-themes/components/button";
 
-export const UIButton: React.FC<ButtonContainerProps> = ({ name, class: className, style, tabIndex, caption }) => {
+interface UIButtonProps {
+  name: string;
+  class: string;
+  style?: CSSProperties;
+  tabIndex?: number;
+  caption: string;
+}
+
+export const UIButton: React.FC<UIButtonProps> = ({ name, class: className, style, tabIndex, caption }) => {
   return (
-    <button name={name} className={className} style={style} tabIndex={tabIndex}>
+    <Button name={name} className={className} style={style} tabIndex={tabIndex}>
       {caption}
-    </button>
+    </Button>
   );
 };
